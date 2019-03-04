@@ -1,0 +1,1907 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="cRDM" version="12.0.0.2017041100">
+  <ownedViewpoints name="cRDMViewe">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="cRDMmodel" label="cRDM model" domainClass="crmd::cRDM" enablePopupBars="true">
+      <metamodel href="http://www.example.org/cRDM#/"/>
+      <metamodel href="http://www.example.org/crmd#/"/>
+      <metamodel href="file:/C:/Users/brabra/brabra-Thesis/CAiSE-Related/Imp/cloud.elasticity.crmd/model/crmd.ecore#/"/>
+      <metamodel href="file:/C:/Users/brabra/brabra-Thesis/CAiSE-Related/Imp/cloudelasticity.crmd/model/crmd.ecore#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="CSMnode" label="CSM node" semanticCandidatesExpression="feature:gc_sm" doubleClickDescription="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@toolSections.4/@ownedTools[name='']" domainClass="crmd::C_SM">
+          <style xsi:type="style:BundledImageDescription" showIcon="false" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="link" sourceMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@containerMappings[name='CloudResource%20Container'] //@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@containerMappings[name='CompositeResource%20Container']/@subContainerMappings[name='AtomicCloudResource%20Container']" targetMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@containerMappings[name='CloudResource%20Container'] //@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@containerMappings[name='CompositeResource%20Container']/@subContainerMappings[name='AtomicCloudResource%20Container']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="crmd::C_Link" useDomainElement="true">
+          <style sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="feature:name">
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="CSMrelationship" sourceMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@containerMappings[name='CloudResource%20Container']" targetMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@nodeMappings[name='CSMnode']" targetFinderExpression="feature:c_sm">
+          <style targetArrow="InputFillClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="hasCSM">
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="constraintrelationship" sourceMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@containerMappings[name='CloudResource%20Container']" targetMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@containerMappings[name='ResourceconstraintContainer']" targetFinderExpression="feature:c_rconstraint">
+          <style targetArrow="InputFillClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="hasCSM">
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="requirmentrelationship" sourceMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@containerMappings[name='CloudResource%20Container']" targetMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@containerMappings[name='ResourcerequirementContainer']" targetFinderExpression="feature:c_rrequirment">
+          <style targetArrow="InputFillClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="hasCSM">
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="link2" semanticCandidatesExpression="feature:c_link" sourceMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@containerMappings[name='CompositeResource%20Container']/@subContainerMappings[name='AtomicCloudResource%20Container']" targetMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@containerMappings[name='CompositeResource%20Container']/@subContainerMappings[name='AtomicCloudResource%20Container']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="crmd::C_Link" useDomainElement="true">
+          <style sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="feature:name">
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="groupCSMrelationship" sourceMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@containerMappings[name='group%20Container']" targetMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@nodeMappings[name='CSMnode']" targetFinderExpression="feature:csm">
+          <style targetArrow="InputFillClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="hasCSM">
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="groupconstraintrelationship" sourceMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@containerMappings[name='group%20Container']" targetMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@containerMappings[name='ResourceconstraintContainer']" targetFinderExpression="feature:resourceconstraint">
+          <style targetArrow="InputFillClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="hasconstraints">
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="grouprequirmentrelationship" sourceMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@containerMappings[name='group%20Container']" targetMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@containerMappings[name='ResourcerequirementContainer']" targetFinderExpression="feature:resourcerequirment">
+          <style targetArrow="InputFillClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="hasrequirements">
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="menberelationship" sourceMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@containerMappings[name='CloudResource%20Container']" targetMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@containerMappings[name='group%20Container']" targetFinderExpression="feature:member">
+          <style targetArrow="InputFillClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="member">
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="CloudResource Container" semanticCandidatesExpression="feature:crdmentity" domainClass="crmd::Atomicresource" childrenPresentation="List">
+          <subNodeMappings name="Attributenode" semanticCandidatesExpression="feature:attribute" domainClass="crmd::Attribute">
+            <style xsi:type="style:BundledImageDescription" showIcon="false" labelExpression="aql:self.name+' :  '+ self.default" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="ResourcerequirementContainer" domainClass="crmd::Resourcerequirment" childrenPresentation="List">
+          <subNodeMappings name="propertynode" semanticCandidatesExpression="feature:property" domainClass="crmd::Property">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.property+': '+self.default " sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="ResourceconstraintContainer" domainClass="crmd::Resourceconstraint" childrenPresentation="List">
+          <subNodeMappings name="constraintpropertynode" semanticCandidatesExpression="feature:property" domainClass="crmd::Property">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.property+' '+ self.operator +' '+ self.default" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="CompositeResource Container" domainClass="crmd::Compositeresource">
+          <subContainerMappings name="AtomicCloudResource Container" semanticCandidatesExpression="feature:cloudresource" domainClass="crmd::Atomicresource" childrenPresentation="List">
+            <subNodeMappings name="Attributenode" semanticCandidatesExpression="feature:attribute" domainClass="crmd::Attribute">
+              <style xsi:type="style:BundledImageDescription" showIcon="false" labelExpression="aql:self.name+' :  '+ self.default" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="group Container" semanticCandidatesExpression="feature:crdmentity" domainClass="crmd::Group" childrenPresentation="List">
+          <subNodeMappings name="Attributenode" semanticCandidatesExpression="feature:attribute" domainClass="crmd::Attribute">
+            <style xsi:type="style:BundledImageDescription" showIcon="false" labelExpression="aql:self.name+' :  '+ self.default" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="CloudResources" label="Cloud Resources">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Add Cloud Resource" containerMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@containerMappings[name='CloudResource%20Container'] //@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@containerMappings[name='CompositeResource%20Container']/@subContainerMappings[name='AtomicCloudResource%20Container']" iconPath="Cloud.Elasticity.cRDM.design/icons/Resourcerequirement.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Atomicresource" referenceName="crdmentity">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="feature:name"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="aql:'Container'"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Atomicresource" referenceName="cloudresource">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="feature:name"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="aql:'Container'"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Add composite Resource" containerMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@containerMappings[name='CompositeResource%20Container']" iconPath="Cloud.Elasticity.cRDM.design/icons/composite.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Compositeresource" referenceName="crdmentity">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="feature:name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Add Attribute" nodeMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@containerMappings[name='CloudResource%20Container']/@subNodeMappings[name='Attributenode'] //@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@containerMappings[name='CompositeResource%20Container']/@subContainerMappings[name='AtomicCloudResource%20Container']/@subNodeMappings[name='Attributenode'] //@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@containerMappings[name='group%20Container']/@subNodeMappings[name='Attributenode']" iconPath="Cloud.Elasticity.cRDM.design/icons/CONSTRAINT.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Attribute" referenceName="attribute">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="feature:name"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="default" valueExpression="feature:default"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Add Group" containerMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@containerMappings[name='group%20Container']" iconPath="Cloud.Elasticity.cRDM.design/icons/groupicons.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Group" referenceName="crdmentity">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="feature:name"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="feature:type"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="member" edgeMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@edgeMappings[name='menberelationship']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="member" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="CloudLinks" label="Cloud Links">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="contained-in link" label="contained-in" edgeMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@edgeMappings[name='link'] //@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@edgeMappings[name='link2']" iconPath="Cloud.Elasticity.cRDM.design/icons/link25.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="feature:eContainer">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::C_Link" referenceName="link">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="contianed-in"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="aql:'Containment'"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::C_Link" referenceName="c_link">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="contianed-in"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="aql:'Containment'"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="hosted-in link" label="hosted-in" edgeMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@edgeMappings[name='link'] //@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@edgeMappings[name='link2']" iconPath="Cloud.Elasticity.cRDM.design/icons/link25.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="feature:eContainer">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::C_Link" referenceName="link">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="hosted-in"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="aql:'Hosting'"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::C_Link" referenceName="c_link">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="hosted-in"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="aql:'Hosting'"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="connected-to link" label="connected-to" edgeMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@edgeMappings[name='link'] //@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@edgeMappings[name='link2']" iconPath="Cloud.Elasticity.cRDM.design/icons/link25.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="feature:eContainer">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::C_Link" referenceName="link">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="connected-to"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="aql:'Communication'"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::C_Link" referenceName="c_link">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="connected-to"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="aql:'Communication'"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="depend-on link" label="depend-on" edgeMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@edgeMappings[name='link'] //@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@edgeMappings[name='link2']" iconPath="Cloud.Elasticity.cRDM.design/icons/link25.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="feature:eContainer">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::C_Link" referenceName="link">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="depend-on"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="aql:'Dependency'"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::C_Link" referenceName="c_link">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="depend-on"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="aql:'Dependency'"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Constraint">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Resource ConstraintContainer" containerMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@containerMappings[name='ResourceconstraintContainer']" iconPath="Cloud.Elasticity.cRDM.design/icons/concontainer.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Resourceconstraint" referenceName="resourceconstraint">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="feature:name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Add constraint" nodeMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@containerMappings[name='ResourceconstraintContainer']/@subNodeMappings[name='constraintpropertynode']" iconPath="Cloud.Elasticity.cRDM.design/icons/CONSTRAINT.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Property" referenceName="property">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="property" valueExpression="feature:property"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="operator" valueExpression="feature:operator"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="default" valueExpression="feature:default"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="unit" valueExpression="feature:unit"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Resource Requirement">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Resource RequirementsContainer" containerMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@containerMappings[name='ResourcerequirementContainer']" iconPath="Cloud.Elasticity.cRDM.design/icons/iconss.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Resourcerequirment" referenceName="resourcerequirment">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="feature:name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Add requirement" nodeMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@containerMappings[name='ResourcerequirementContainer']/@subNodeMappings[name='propertynode']" iconPath="Cloud.Elasticity.cRDM.design/icons/require.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Property" referenceName="property">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="property" valueExpression="feature:property"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="operator" valueExpression="feature:operator"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="default" valueExpression="feature:default"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="unit" valueExpression="feature:unit"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="ResourceCSM" label="Resource C-SM ">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="create CSM node" label="Add CSM" nodeMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@nodeMappings[name='CSMnode']" iconPath="Cloud.Elasticity.cRDM.design/icons/csm1.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::C_SM" referenceName="gc_sm">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="feature:name"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="feature:id"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="startdate" valueExpression="feature:startdate"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="enddate" valueExpression="feature:enddate"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" mappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@nodeMappings[name='CSMnode']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='CSM%20Diagram']"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Relationships">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="hasrequirements" edgeMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@edgeMappings[name='grouprequirmentrelationship']" iconPath="Cloud.Elasticity.cRDM.design/icons/csmarrowas.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="resourcerequirment" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="hasconstraint" edgeMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@edgeMappings[name='groupconstraintrelationship']" iconPath="Cloud.Elasticity.cRDM.design/icons/csmarrowas.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="resourceconstraint" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="hasCSM" edgeMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']/@defaultLayer/@edgeMappings[name='groupCSMrelationship']" iconPath="Cloud.Elasticity.cRDM.design/icons/csmarrowas.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="csm" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="CSM Diagram" domainClass="crmd::C_SM" enablePopupBars="true">
+      <metamodel href="file:/C:/Users/brabra/brabra-Thesis/CAiSE-Related/Imp/cloudelasticity.crmd/model/crmd.ecore#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="initialState" semanticCandidatesExpression="feature:state" domainClass="crmd::InitialState">
+          <style xsi:type="style:BundledImageDescription" showIcon="false" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="normalState" semanticCandidatesExpression="feature:state" domainClass="crmd::NormalState">
+          <style xsi:type="style:BundledImageDescription" showIcon="false" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="finalState" semanticCandidatesExpression="feature:state" domainClass="crmd::FinalState">
+          <style xsi:type="style:BundledImageDescription" showIcon="false" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="eventnode" semanticCandidatesExpression="feature:cevent" domainClass="crmd::Event">
+          <style xsi:type="style:NoteDescription" showIcon="false" labelExpression="aql:self.label" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="actionnode" semanticCandidatesExpression="feature:creconfigurationaction" domainClass="crmd::Reconfigurationaction">
+          <style xsi:type="style:NoteDescription" showIcon="false" labelExpression="aql:self.label" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="resourcerequirement" sourceMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='CSM%20Diagram']/@defaultLayer/@containerMappings[name='Statecontainer']" targetMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='CSM%20Diagram']/@defaultLayer/@containerMappings[name='StaterequirementContainer']" targetFinderExpression="feature:characterize">
+          <style lineStyle="dash_dot" targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="characterize">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="CSMTransition" label="CSM Transition" sourceMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='CSM%20Diagram']/@defaultLayer/@containerMappings[name='Statecontainer']" targetMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='CSM%20Diagram']/@defaultLayer/@containerMappings[name='Statecontainer']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="crmd::Transition" useDomainElement="true">
+          <style sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="feature:name">
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="eventbased" sourceMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='CSM%20Diagram']/@defaultLayer/@edgeMappings[name='CSMTransition']" targetMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='CSM%20Diagram']/@defaultLayer/@nodeMappings[name='eventnode']" targetFinderExpression="feature:transitionevent">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <centerLabelStyleDescription showIcon="false">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="actionbasedrelation" sourceMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='CSM%20Diagram']/@defaultLayer/@edgeMappings[name='CSMTransition']" targetMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='CSM%20Diagram']/@defaultLayer/@nodeMappings[name='actionnode']" targetFinderExpression="feature:reconfigurationaction">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <centerLabelStyleDescription showIcon="false">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="TSMTransition" label="TSMtransition" sourceMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='CSM%20Diagram']/@defaultLayer/@containerMappings[name='Statecontainer']/@subContainerMappings[name='TSM']/@subNodeMappings[name='tstatenode']" targetMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='CSM%20Diagram']/@defaultLayer/@containerMappings[name='Statecontainer']/@subContainerMappings[name='TSM']/@subNodeMappings[name='tstatenode']" targetFinderExpression="feature:ttarget" sourceFinderExpression="feature:tsource" domainClass="crmd::Normaltransilien" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription labelSize="7" showIcon="false" labelExpression="feature:label">
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="TSMdepedency" sourceMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='CSM%20Diagram']/@defaultLayer/@containerMappings[name='Statecontainer']/@subContainerMappings[name='TSM']/@subNodeMappings[name='tstatenode']" targetMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='CSM%20Diagram']/@defaultLayer/@containerMappings[name='Statecontainer']/@subContainerMappings[name='TSM']/@subNodeMappings[name='tstatenode']" targetFinderExpression="feature:ttarget" sourceFinderExpression="feature:tsource" domainClass="crmd::Dependency" useDomainElement="true">
+          <style lineStyle="dot" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            <centerLabelStyleDescription labelSize="7" showIcon="false" labelExpression="feature:label">
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="StaterequirementContainer" domainClass="crmd::StateResourcerequirment" childrenPresentation="List">
+          <subNodeMappings name="propertynode" semanticCandidatesExpression="feature:property" domainClass="crmd::Property">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.property+': '+self.default " sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="&lt;&lt;Resource Requirements>>">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="TSM" semanticCandidatesExpression="feature:CSM_tsa" domainClass="crmd::TSA">
+          <subNodeMappings name="tstatenode" semanticCandidatesExpression="feature:eAllContents" domainClass="crmd::Tstate">
+            <style xsi:type="style:WorkspaceImageDescription" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="Cloud.Elasticity.cRDM.design.TSMextension/icons/final.bmp">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="5" showIcon="false" labelExpression="" labelAlignment="LEFT">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="Statecontainer" semanticCandidatesExpression="feature:state" domainClass="crmd::State">
+          <subContainerMappings name="TSM" semanticCandidatesExpression="feature:tsa" domainClass="crmd::TSA">
+            <subNodeMappings name="tstatenode" semanticCandidatesExpression="feature:eAllContents" domainClass="crmd::Tstate">
+              <conditionnalStyles predicateExpression="aql:self.type.toString() = 'final'">
+                <style xsi:type="style:BundledImageDescription" labelSize="7" showIcon="false" labelPosition="node" resizeKind="NSEW">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelFormat>bold</labelFormat>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+                </style>
+              </conditionnalStyles>
+              <conditionnalStyles predicateExpression="aql:self.type.toString() =  'initial'">
+                <style xsi:type="style:BundledImageDescription" labelSize="7" showIcon="false" labelPosition="node" resizeKind="NSEW">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelFormat>bold</labelFormat>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                </style>
+              </conditionnalStyles>
+              <conditionnalStyles predicateExpression="aql:self.type.toString() = 'Valid Termination'">
+                <style xsi:type="style:BundledImageDescription" labelSize="7" showIcon="false" labelPosition="node" resizeKind="NSEW">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelFormat>bold</labelFormat>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+                </style>
+              </conditionnalStyles>
+              <conditionnalStyles predicateExpression="aql:self.type.toString() = 'Non Valid termination'">
+                <style xsi:type="style:BundledImageDescription" labelSize="7" showIcon="false" labelPosition="node" resizeKind="NSEW">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelFormat>bold</labelFormat>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
+                </style>
+              </conditionnalStyles>
+              <conditionnalStyles predicateExpression="aql:self.type.toString() = 'intermediate'">
+                <style xsi:type="style:BundledImageDescription" labelSize="7" showIcon="false" labelPosition="node" resizeKind="NSEW">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelFormat>bold</labelFormat>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                </style>
+              </conditionnalStyles>
+            </subNodeMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="5" showIcon="false" labelExpression="" labelAlignment="LEFT">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subContainerMappings>
+          <conditionnalStyles predicateExpression="aql:self.type.toString() ='initial'">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql:self.type.toString() ='intermediate'">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql:self.type.toString() = 'final'">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </conditionnalStyles>
+        </containerMappings>
+        <toolSections name="State">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Initial State" containerMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='CSM%20Diagram']/@defaultLayer/@containerMappings[name='Statecontainer']" iconPath="Cloud.Elasticity.cRDM.design/icons/InitialState.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::State" referenceName="state">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="feature:name"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="initial"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Normal State" containerMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='CSM%20Diagram']/@defaultLayer/@containerMappings[name='Statecontainer']" iconPath="Cloud.Elasticity.cRDM.design/icons/NormalState.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::State" referenceName="state">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="feature:name"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="intermediate"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Final State" containerMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='CSM%20Diagram']/@defaultLayer/@containerMappings[name='Statecontainer']" iconPath="Cloud.Elasticity.cRDM.design/icons/Finalstate.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::State" referenceName="state">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="feature:name"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="final"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Transactional states">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="TSMcontainer" label="Pivot SM" containerMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='CSM%20Diagram']/@defaultLayer/@containerMappings[name='Statecontainer']/@subContainerMappings[name='TSM']" iconPath="Cloud.Elasticity.cRDM.design.TSMextension/icons/pivot.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::TSA" referenceName="tsa" variableName="TSA-Pivot">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:TSA-Pivot">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Tstate" referenceName="tstate" variableName="state1initial">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="initial"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="initial"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Tstate" referenceName="tstate" variableName="state2active">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="active"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="intermediate"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Normaltransilien" referenceName="ttransition" variableName="t1">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="tsource" valueExpression="var:state1initial"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="ttarget" valueExpression="var:state2active"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="activate()"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Tstate" referenceName="tstate" variableName="state3completed">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="completed"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="final"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Normaltransilien" referenceName="ttransition" variableName="t2">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="tsource" valueExpression="var:state2active"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="ttarget" valueExpression="var:state3completed"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="complete()"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Tstate" referenceName="tstate" variableName="state4cancelled">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="cancelled"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="final"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Normaltransilien" referenceName="ttransition" variableName="t3">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="tsource" valueExpression="var:state2active"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="ttarget" valueExpression="var:state4cancelled"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="cancel()"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Tstate" referenceName="tstate" variableName="state5failed">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="failed"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="final"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Normaltransilien" referenceName="ttransition" variableName="t5">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="tsource" valueExpression="var:state2active"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="ttarget" valueExpression="var:state5failed"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="fail()"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="Pivot SM"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="TSMcontainer2" label="Retriable SM" containerMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='CSM%20Diagram']/@defaultLayer/@containerMappings[name='Statecontainer']/@subContainerMappings[name='TSM']" iconPath="Cloud.Elasticity.cRDM.design.TSMextension/icons/retry2.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::TSA" referenceName="tsa" variableName="RTSA">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:RTSA">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Tstate" referenceName="tstate" variableName="stateRSMinitial">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="initial"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="initial"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Tstate" referenceName="tstate" variableName="stateRSMactive">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="active"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="intermediate"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Normaltransilien" referenceName="ttransition" variableName="RSMt1">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="tsource" valueExpression="var:stateRSMinitial"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="ttarget" valueExpression="var:stateRSMactive"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="activate()"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Tstate" referenceName="tstate" variableName="stateRSMcompleted">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="completed"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="final"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Normaltransilien" referenceName="ttransition" variableName="RSMt2">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="tsource" valueExpression="var:stateRSMactive"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="ttarget" valueExpression="var:stateRSMcompleted"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="complete()"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Tstate" referenceName="tstate" variableName="stateRSMcancelled">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="cancelled"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="intermediate"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Normaltransilien" referenceName="ttransition" variableName="RSMt3">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="tsource" valueExpression="var:stateRSMactive"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="ttarget" valueExpression="var:stateRSMcancelled"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="cancel()"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Tstate" referenceName="tstate" variableName="state5failed">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="failed"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="intermediate"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Normaltransilien" referenceName="ttransition" variableName="RSMt5">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="tsource" valueExpression="var:stateRSMactive"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="ttarget" valueExpression="var:state5failed"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="fail()"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Normaltransilien" referenceName="ttransition" variableName="RSMt6">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="tsource" valueExpression="var:state5failed"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="ttarget" valueExpression="var:stateRSMactive"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="retry()"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="Retrible SM"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="TSMcontainer1" label="Compensatable SM" containerMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='CSM%20Diagram']/@defaultLayer/@containerMappings[name='Statecontainer']/@subContainerMappings[name='TSM']" iconPath="Cloud.Elasticity.cRDM.design.TSMextension/icons/compo.jpg">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::TSA" referenceName="tsa" variableName="CompensableSM">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:CompensableSM">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Tstate" referenceName="tstate" variableName="stateCSMinitial">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="initial"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="initial"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Tstate" referenceName="tstate" variableName="stateCSMactive">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="active"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="intermediate"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Normaltransilien" referenceName="ttransition" variableName="CSMt1">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="tsource" valueExpression="var:stateCSMinitial"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="ttarget" valueExpression="var:stateCSMactive"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="activate()"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Tstate" referenceName="tstate" variableName="stateCSMcompleted">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="completed"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="final"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Normaltransilien" referenceName="ttransition" variableName="t2CSM">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="tsource" valueExpression="var:stateCSMactive"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="ttarget" valueExpression="var:stateCSMcompleted"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="complete()"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Tstate" referenceName="tstate" variableName="stateCSMcancelled">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="cancelled"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="final"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Normaltransilien" referenceName="ttransition" variableName="CSMt3">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="tsource" valueExpression="var:stateCSMactive"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="ttarget" valueExpression="var:stateCSMcancelled"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="cancel()"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Tstate" referenceName="tstate" variableName="stateCSMfailed">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="failed"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="final"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Normaltransilien" referenceName="ttransition" variableName="CSMt5">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="tsource" valueExpression="var:stateCSMactive"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="ttarget" valueExpression="var:stateCSMfailed"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="fail()"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Tstate" referenceName="tstate" variableName="stateCSMcompensated">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="compensated"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="final"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Normaltransilien" referenceName="ttransition" variableName="CSM6">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="tsource" valueExpression="var:stateCSMcompleted"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="ttarget" valueExpression="var:stateCSMcompensated"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="compensate()"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="Compensatable SM"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="TSMcontainer3" label="retriable-compensatable SM" containerMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='CSM%20Diagram']/@defaultLayer/@containerMappings[name='Statecontainer']/@subContainerMappings[name='TSM']" iconPath="Cloud.Elasticity.cRDM.design.TSMextension/icons/Compensateretry.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::TSA" referenceName="tsa" variableName="retricompSM">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:retricompSM">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Tstate" referenceName="tstate" variableName="stateRCSMinitial">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="initial"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="initial"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Tstate" referenceName="tstate" variableName="stateRCSMactive">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="active"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="intermediate"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Normaltransilien" referenceName="ttransition" variableName="RCSMt1">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="tsource" valueExpression="var:stateRCSMinitial"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="ttarget" valueExpression="var:stateRCSMactive"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="activate()"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Tstate" referenceName="tstate" variableName="stateRCSMcompleted">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="completed"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="intermediate"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Normaltransilien" referenceName="ttransition" variableName="t2RCSM">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="tsource" valueExpression="var:stateRCSMactive"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="ttarget" valueExpression="var:stateRCSMcompleted"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="complete()"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Tstate" referenceName="tstate" variableName="stateRCSMcancelled">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="cancelled"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="intermediate"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Normaltransilien" referenceName="ttransition" variableName="RCSMt3">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="tsource" valueExpression="var:stateRCSMactive"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="ttarget" valueExpression="var:stateRCSMcancelled"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="cancel()"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Tstate" referenceName="tstate" variableName="stateRCSMfailed">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="failed"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="intermediate"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Normaltransilien" referenceName="ttransition" variableName="RCSMt5">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="tsource" valueExpression="var:stateRCSMactive"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="ttarget" valueExpression="var:stateRCSMfailed"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="fail()"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Tstate" referenceName="tstate" variableName="stateRCSMcompensated">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="compensated"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="final"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Normaltransilien" referenceName="ttransition" variableName="RCSM6">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="tsource" valueExpression="var:stateRCSMcompleted"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="ttarget" valueExpression="var:stateRCSMcompensated"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="compensate()"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Normaltransilien" referenceName="ttransition" variableName="RCSM7">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="tsource" valueExpression="var:stateRCSMfailed"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="ttarget" valueExpression="var:stateRCSMactive"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="retry()"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="TSMcontainer3" label="Pivot-retriable SM" containerMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='CSM%20Diagram']/@defaultLayer/@containerMappings[name='Statecontainer']/@subContainerMappings[name='TSM']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::TSA" referenceName="tsa">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Tstate" referenceName="tstate" variableName="state1initial">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="initial"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="initial"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Tstate" referenceName="tstate" variableName="state2active">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="active"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="active"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Normaltransilien" referenceName="ttransition" variableName="t1">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="tsource" valueExpression="var:state1initial"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="ttarget" valueExpression="var:state2active"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="cancel()"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Tstate" referenceName="tstate" variableName="state3completed">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="completed"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="completed"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Normaltransilien" referenceName="ttransition" variableName="t2">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="tsource" valueExpression="var:state2active"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="ttarget" valueExpression="var:state3completed"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="cancel()"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Tstate" referenceName="tstate" variableName="state4cancelled">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="cancelled"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="cancelled"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Normaltransilien" referenceName="ttransition" variableName="t3">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="tsource" valueExpression="var:state2active"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="ttarget" valueExpression="var:state4cancelled"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="cancel()"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Tstate" referenceName="tstate" variableName="state5failed">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="failed"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="failed"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Normaltransilien" referenceName="ttransition" variableName="t5">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="tsource" valueExpression="var:state2active"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="ttarget" valueExpression="var:state5failed"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="fail()"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Add dependency" edgeMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='CSM%20Diagram']/@defaultLayer/@edgeMappings[name='TSMdepedency']" iconPath="Cloud.Elasticity.cRDM.design.TSMextension/icons/dependenceicons.jpg">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="feature:eContainer">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Dependency" referenceName="ttransition">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="tsource" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="ttarget" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Resource Requirement">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Resource RequirementsContainer" containerMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='CSM%20Diagram']/@defaultLayer/@containerMappings[name='StaterequirementContainer']" iconPath="Cloud.Elasticity.cRDM.design/icons/iconss.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::StateResourcerequirment" referenceName="csmrequirment">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="feature:name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Add requirement" nodeMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='CSM%20Diagram']/@defaultLayer/@containerMappings[name='StaterequirementContainer']/@subNodeMappings[name='propertynode']" iconPath="Cloud.Elasticity.cRDM.design/icons/require.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Property" referenceName="property">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="property" valueExpression="feature:property"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="operator" valueExpression="feature:operator"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="default" valueExpression="feature:default"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="unit" valueExpression="feature:unit"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Assign requirements" edgeMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='CSM%20Diagram']/@defaultLayer/@edgeMappings[name='resourcerequirement']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="characterize" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Transitions">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Create Transition" edgeMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='CSM%20Diagram']/@defaultLayer/@edgeMappings[name='CSMTransition']" iconPath="Cloud.Elasticity.cRDM.design/icons/transionicons.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="feature:eContainer">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Transition" referenceName="transition">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="reconfigurationaction" valueExpression="feature:reconfigurationaction"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="event" valueExpression="feature:event"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="create event" nodeMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='CSM%20Diagram']/@defaultLayer/@nodeMappings[name='eventnode']" iconPath="Cloud.Elasticity.cRDM.design/icons/eveent-icons.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Event" referenceName="cevent">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="feature:name"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="feature:id"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="typeevent" valueExpression="feature:eventtype"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="feature:label"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Assign revent" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='CSM%20Diagram']/@defaultLayer/@edgeMappings[name='eventbased']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="transitionevent" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createreconfigurationaction" label="create reconfiguration action" nodeMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='CSM%20Diagram']/@defaultLayer/@nodeMappings[name='actionnode']" iconPath="Cloud.Elasticity.cRDM.design/icons/action.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Reconfigurationaction" referenceName="creconfigurationaction">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="feature:name"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="action" valueExpression="feature:action"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="feature:id"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="feature:label"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Assign action" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='CSM%20Diagram']/@defaultLayer/@edgeMappings[name='actionbasedrelation']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="reconfigurationaction" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="cRDMCore" label="cRDMCore diagram" domainClass="crmd::Mainmap" enablePopupBars="true">
+      <metamodel href="file:/C:/Users/brabra/brabra-Thesis/CAiSE-Related/Imp/cloudelasticity.crmd/model/crmd.ecore#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="cRDM node" semanticCandidatesExpression="feature:crdm" doubleClickDescription="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMCore']/@defaultLayer/@toolSections.0/@ownedTools[name='cRDM%20doubleclisk']" domainClass="crmd::cRDM">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" roundedCorner="true" workspacePath="Cloud.Elasticity.cRDM.design/icons/crdmmodel.PNG">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="awsProvider node" semanticCandidatesExpression="feature:provider" domainClass="crmd::AWS">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" arcWidth="8" arcHeight="8" roundedCorner="true" workspacePath="Cloud.Elasticity.cRDM.design/icons/awscadre.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Openstacknode" semanticCandidatesExpression="feature:provider" domainClass="crmd::Openstack">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" arcWidth="8" arcHeight="8" roundedCorner="true" workspacePath="Cloud.Elasticity.cRDM.design/icons/openstackcadre.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="orchestratornode" semanticCandidatesExpression="feature:orechestrationtool" domainClass="crmd::OrechestrationTool">
+          <conditionnalStyles predicateExpression="aql:self.tool.toString()='Docker'">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="feature:tool" sizeComputationExpression="-1" resizeKind="NSEW" arcWidth="8" arcHeight="8" roundedCorner="true" workspacePath="Cloud.Elasticity.cRDM.design/icons/dockercadre.PNG">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql:self.tool.toString()='Terraform'">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="feature:tool" sizeComputationExpression="-1" resizeKind="NSEW" arcWidth="8" arcHeight="8" roundedCorner="true" workspacePath="Cloud.Elasticity.cRDM.design/icons/terraformcadre.PNG">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+        </nodeMappings>
+        <nodeMappings name="Openstacknode" semanticCandidatesExpression="feature:provider" domainClass="crmd::Openstack">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" arcWidth="8" arcHeight="8" roundedCorner="true" workspacePath="Cloud.Elasticity.cRDM.design/icons/openstackcadre.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="providerlink" sourceMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMCore']/@defaultLayer/@nodeMappings[name='cRDM%20node']" targetMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMCore']/@defaultLayer/@nodeMappings[name='awsProvider%20node'] //@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMCore']/@defaultLayer/@nodeMappings[name='Openstacknode'] //@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMCore']/@defaultLayer/@nodeMappings[name='Openstacknode']" targetFinderExpression="feature:provider">
+          <style targetArrow="OutputFillClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="provider">
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Orch_Connector" sourceMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMCore']/@defaultLayer/@nodeMappings[name='cRDM%20node']" targetMapping="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMCore']/@defaultLayer/@nodeMappings[name='orchestratornode']" targetFinderExpression="feature:targetorchestrationtool" sourceFinderExpression="feature:sourcecRDM" domainClass="crmd::Connector" useDomainElement="true">
+          <style targetArrow="OutputFillClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="connector">
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections name="cRDM Design">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="create new cRDM" label="create new cRDM" nodeMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMCore']/@defaultLayer/@nodeMappings[name='cRDM%20node']" iconPath="Cloud.Elasticity.cRDM.design/icons/resource-modelic.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::cRDM" referenceName="crdm">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="feature:name"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="feature:id"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="startdate" valueExpression="feature:startdate"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="enddate" valueExpression="feature:enddate"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="provider" valueExpression="feature:provider"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="cRDM doubleclisk" mappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMCore']/@defaultLayer/@nodeMappings[name='cRDM%20node']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMmodel']"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ExternalJavaActionCall" name="validate"/>
+        </toolSections>
+        <toolSections name="Cloud Providers">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Amazon Web service" nodeMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMCore']/@defaultLayer/@nodeMappings[name='awsProvider%20node']" iconPath="Cloud.Elasticity.cRDM.design/icons/aws50.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::AWS" referenceName="provider">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="AWS"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Openstack" nodeMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMCore']/@defaultLayer/@nodeMappings[name='Openstacknode']" iconPath="Cloud.Elasticity.cRDM.design/icons/openstack15.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Openstack" referenceName="provider">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="Openstack"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Microsoft Azure" nodeMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMCore']/@defaultLayer/@nodeMappings[name='awsProvider%20node']" iconPath="Cloud.Elasticity.cRDM.design/icons/azure50.jpg">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Provider" referenceName="provider">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="feature:name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Google Cloud Platform" nodeMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMCore']/@defaultLayer/@nodeMappings[name='awsProvider%20node']" iconPath="Cloud.Elasticity.cRDM.design/icons/google-50.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Provider" referenceName="provider">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="feature:name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Assign provider" edgeMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMCore']/@defaultLayer/@edgeMappings[name='providerlink']" iconPath="Cloud.Elasticity.cRDM.design/icons/providerlinkIN.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="provider" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Cloud Orchestrators">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Docker" nodeMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMCore']/@defaultLayer/@nodeMappings[name='orchestratornode']" iconPath="Cloud.Elasticity.cRDM.design/icons/docker50.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::OrechestrationTool" referenceName="orechestrationtool">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="tool" valueExpression="aql:'Docker'"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Kubernetes" nodeMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMCore']/@defaultLayer/@nodeMappings[name='awsProvider%20node']" iconPath="Cloud.Elasticity.cRDM.design/icons/kubernetesicons.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Provider" referenceName="provider">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="feature:name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Terraform" nodeMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMCore']/@defaultLayer/@nodeMappings[name='orchestratornode']" iconPath="Cloud.Elasticity.cRDM.design/icons/terraformicons.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::OrechestrationTool" referenceName="orechestrationtool">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="tool" valueExpression="aql:'Terraform'"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Juju" nodeMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMCore']/@defaultLayer/@nodeMappings[name='awsProvider%20node']" iconPath="Cloud.Elasticity.cRDM.design/icons/jujuicons.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Provider" referenceName="provider">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="feature:name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Ansible" nodeMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMCore']/@defaultLayer/@nodeMappings[name='awsProvider%20node']" iconPath="Cloud.Elasticity.cRDM.design/icons/ansibleicons.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Provider" referenceName="provider">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="feature:name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="set connector" edgeMappings="//@ownedViewpoints[name='cRDMViewe']/@ownedRepresentations[name='cRDMCore']/@defaultLayer/@edgeMappings[name='Orch_Connector']" iconPath="Cloud.Elasticity.cRDM.design/icons/connectors-icons.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="feature:eContainer">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="crmd::Connector" referenceName="connector">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="sourcecRDM" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="targetorchestrationtool" valueExpression="var:target"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="feature:type"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="Cloud.Elasticity.cRDM.design.Services"/>
+  </ownedViewpoints>
+  <extensions xsi:type="properties:ViewExtensionDescription" name="TransitionsProperties" label="Transitions Properties">
+    <categories name="Default Category">
+      <pages name="Default Page" labelExpression="Page" domainClass="crmd::Transition" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0"/>
+      <groups name="Default Group" labelExpression="Group" domainClass="crmd::Transition">
+        <controls xsi:type="properties:ContainerDescription" name="Transition">
+          <controls xsi:type="properties:TextDescription" name="Transionanme" labelExpression="name" helpExpression="the identifier of a transition " valueExpression="feature:name">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:TextDescription" name="Transionsource" labelExpression="source" helpExpression="the source of a transition " valueExpression="aql:self.source.name"/>
+          <controls xsi:type="properties:TextDescription" name="Transiontarget" labelExpression="target" helpExpression="the target of a transition " valueExpression="aql:self.target.name"/>
+          <controls xsi:type="properties:TextDescription" name="event" labelExpression="Event" valueExpression="aql:self.transitionevent.name"/>
+          <controls xsi:type="properties:TextDescription" name="action" labelExpression="action" valueExpression="aql:self.reconfigurationaction.name"/>
+          <controls xsi:type="properties:TextDescription" name="Transitionid" labelExpression="id" helpExpression="the identifier of a transition " valueExpression="feature:id">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+        </controls>
+      </groups>
+    </categories>
+  </extensions>
+  <extensions xsi:type="properties:ViewExtensionDescription" name="ReconfigurationacttionProperties" label="Reconfiguration properties">
+    <categories name="Default Category">
+      <pages name="Default Page" labelExpression="Page" domainClass="crmd::Reconfigurationaction" semanticCandidateExpression="var:self" groups="//@extensions.1/@categories.0/@groups.0 //@extensions.1/@categories.0/@groups.5 //@extensions.1/@categories.0/@groups.4 //@extensions.1/@categories.0/@groups.6 //@extensions.1/@categories.0/@groups.1 //@extensions.1/@categories.0/@groups.3 //@extensions.1/@categories.0/@groups.2"/>
+      <groups name="Default Group" labelExpression="Group" domainClass="crmd::Reconfigurationaction">
+        <controls xsi:type="properties:ContainerDescription" name="Reconfiguration">
+          <controls xsi:type="properties:TextDescription" name="Actionid" labelExpression="action id" helpExpression="the identifier of action" valueExpression="feature:id">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:SelectDescription" name="ActionType" labelExpression="Action Type" helpExpression="The type of action" valueExpression="feature:action" candidatesExpression="aql:Sequence{ crmd::Reconfigurationactiontype::default, crmd::Reconfigurationactiontype::Basicaction, crmd::Reconfigurationactiontype:: Horizontalscaling, crmd::Reconfigurationactiontype:: Verticalscaling, crmd::Reconfigurationactiontype:: Migration, crmd::Reconfigurationactiontype::Applicationreconfiguration, crmd::Reconfigurationactiontype::Compositereconfiguration}" candidateDisplayExpression="aql:candidate.toString()">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="action" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:TextDescription" name="Actionid" labelExpression="action name" helpExpression="the name of action" valueExpression="feature:name">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:ButtonDescription" name="deploy" labelExpression="deploy" buttonLabelExpression="deploy ">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+            </initialOperation>
+          </controls>
+        </controls>
+        <actions tooltipExpression="deploy" imageExpression="Cloud.Elasticity.cRDM.design/icons/dashboardicon.png">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+          </initialOperation>
+        </actions>
+        <actions tooltipExpression="genrate" imageExpression="Cloud.Elasticity.cRDM.design/icons/dashboardicon.png">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+          </initialOperation>
+        </actions>
+      </groups>
+      <groups name="Horizontalscaling group" labelExpression="Horizontal scaling" domainClass="crmd::Reconfigurationaction" semanticCandidateExpression="var:self" preconditionExpression="aql:self.action=crmd::Reconfigurationactiontype::Horizontalscaling">
+        <controls xsi:type="properties:ContainerDescription" name="Composite reconfiguration">
+          <controls xsi:type="properties:SelectDescription" name="actionnameg" labelExpression="action" helpExpression="the anme of action" valueExpression="feature:scalingname" candidatesExpression="aql:Sequence{crmd::Scalingnames::Scalein, crmd::Scalingnames::Scaleout, crmd::Scalingnames::Scaleup, crmd::Scalingnames::Scaledown}" candidateDisplayExpression="aql:candidate.toString()">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="scalingname" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:TextDescription" name="resourcetargetwe" labelExpression="resource-target" valueExpression="feature:resource_target">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="resource_target" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:SelectDescription" name="adjustmenttypewg" labelExpression="adjustment-type" helpExpression="The whay of adjustment" valueExpression="feature:adjustment_type" candidatesExpression="aql:Sequence{crmd::Adjustmenttype::default, crmd::Adjustmenttype::Exactcapacity, crmd::Adjustmenttype:: Percentchangeincapacity, crmd::Adjustmenttype::Changeincapacity}" candidateDisplayExpression="aql:candidate.toString()">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="adjustment_type" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:TextDescription" name="Adjust" labelExpression="Adjust" valueExpression="feature:Adjust">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="Adjust" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:TextDescription" name="cooldownwg" labelExpression="cooldown" valueExpression="feature:Cooldown">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="Cooldown" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:TextDescription" name="label" labelExpression="label" valueExpression="feature:label">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+        </controls>
+      </groups>
+      <groups name="Verticalscaling group" label="Vertical scaling group" labelExpression="Vertical scaling" domainClass="crmd::Reconfigurationaction" semanticCandidateExpression="var:self" preconditionExpression="aql:self.action=crmd::Reconfigurationactiontype::Verticalscaling">
+        <controls xsi:type="properties:ContainerDescription" name="vertical Scaling">
+          <controls xsi:type="properties:TextDescription" name="Adjust" labelExpression="Adjust" valueExpression="feature:Adjust">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="Adjust" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:SelectDescription" name="actionnameg" labelExpression="action" helpExpression="the anme of action" valueExpression="feature:scalingname" candidatesExpression="aql:Sequence{crmd::Scalingnames::Scalein, crmd::Scalingnames::Scaleout, crmd::Scalingnames::Scaleup, crmd::Scalingnames::Scaledown}" candidateDisplayExpression="aql:candidate.toString()">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="scalingname" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:TextDescription" name="resourcetargetwe" labelExpression="resource-target" valueExpression="feature:resource_target">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="resource_target" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:SelectDescription" name="adjustmenttypewg" labelExpression="adjustment-type" helpExpression="The whay of adjustment" valueExpression="feature:adjustment_type" candidatesExpression="aql:Sequence{crmd::Adjustmenttype::default, crmd::Adjustmenttype::Exactcapacity, crmd::Adjustmenttype:: Percentchangeincapacity, crmd::Adjustmenttype::Changeincapacity}" candidateDisplayExpression="aql:candidate.toString()">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="adjustment_type" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:TextDescription" name="cooldownwg" labelExpression="cooldown" valueExpression="feature:Cooldown">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="Cooldown" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:SelectDescription" name="attributetargetwg" labelExpression="Attribute_target" valueExpression="feature:Attribute_target" candidatesExpression="aql:Sequence{crmd::Attributename::default}" candidateDisplayExpression="aql:candidate.toString()">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="Attribute_target" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:TextDescription" name="label" labelExpression="label" valueExpression="feature:label">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+        </controls>
+      </groups>
+      <groups name="Migration group" labelExpression="Migration" domainClass="crmd::Reconfigurationaction" semanticCandidateExpression="var:self" preconditionExpression="aql:self.action=crmd::Reconfigurationactiontype::Migration">
+        <controls xsi:type="properties:ContainerDescription" name="Migration">
+          <controls xsi:type="properties:TextDescription" name="name" labelExpression="name" valueExpression="feature:migratename">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="migratename" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:TextDescription" name="target" labelExpression="target" valueExpression="feature:target">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:TextDescription" name="host" labelExpression="host" valueExpression="feature:host">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="host" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:SelectDescription" name="migrationtype" labelExpression="migration type" valueExpression="feature:type" candidatesExpression="aql:Sequence{crmd::Migrationtype::Cold, crmd::Migrationtype::Hot}" candidateDisplayExpression="aql:candidate.toString()">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+        </controls>
+      </groups>
+      <groups name="Basic action group" labelExpression="Basic action" domainClass="crmd::Reconfigurationaction" semanticCandidateExpression="var:self" preconditionExpression="aql:self.action=crmd::Reconfigurationactiontype::Basicaction">
+        <controls xsi:type="properties:ContainerDescription" name="basic reconfiguration">
+          <controls xsi:type="properties:SelectDescription" name="basicaction" labelExpression="basic action" helpExpression="the name of action" valueExpression="feature:baname" candidatesExpression="aql:Sequence{crmd::Basicactionname::start, crmd::Basicactionname::stop, crmd::Basicactionname::restart, crmd:: Basicactionname::delete}" candidateDisplayExpression="aql:candidate.toString()">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="baname" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:TextDescription" name="Adjust" labelExpression="Adjust" valueExpression="feature:Adjust">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="Adjust" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:TextDescription" name="resourcetargetwe" labelExpression="resource-target" valueExpression="feature:resource_target">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="resource_target" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:TextDescription" name="label" labelExpression="label" valueExpression="feature:label">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+        </controls>
+      </groups>
+      <groups name="Applicationreconfiguration group" labelExpression="Applicationreconfiguration" domainClass="crmd::Reconfigurationaction" preconditionExpression="aql:self.action=crmd::Reconfigurationactiontype::Applicationreconfiguration">
+        <controls xsi:type="properties:ContainerDescription" name="Applicationreconfiguration">
+          <controls xsi:type="properties:TextDescription" name="name" labelExpression="name" valueExpression="update"/>
+          <controls xsi:type="properties:TextDescription" name="resourcetargetwe" labelExpression="resource-target" valueExpression="feature:resource_target">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="resource_target" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:SelectDescription" name="attributetargetwg" labelExpression="Attribute_target" valueExpression="feature:Attribute_target" candidatesExpression="aql:Sequence{crmd::Attributename::default}" candidateDisplayExpression="aql:candidate.toString()">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="Attribute_target" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:TextDescription" name="Cooldown" labelExpression="attribute-value" valueExpression="feature:attributevalue">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="attributevalue" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:TextDescription" name="label" labelExpression="label" valueExpression="feature:">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+        </controls>
+      </groups>
+      <groups name="Compositereconfiguration group" labelExpression="Composite reconfiguration" domainClass="crmd::Reconfigurationaction" semanticCandidateExpression="var:self" preconditionExpression="aql:self.action=crmd::Reconfigurationactiontype::Compositereconfiguration">
+        <controls xsi:type="properties:ContainerDescription" name="Composite reconfiguration">
+          <controls xsi:type="properties:TextDescription" name="configure" labelExpression="name" valueExpression="configure"/>
+          <controls xsi:type="properties:SelectDescription" name="execution" labelExpression="execution" helpExpression="choose the execution type " valueExpression="feature:execution" candidatesExpression="aql:Sequence{crmd::Executiontype::sequential, crmd::Executiontype::parallel}" candidateDisplayExpression="aql:candidate.toString()">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="execution" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:TextDescription" name="label" labelExpression="label" valueExpression="feature:label">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+        </controls>
+      </groups>
+    </categories>
+  </extensions>
+  <extensions xsi:type="properties:ViewExtensionDescription" name="EventProperties" label="Event properties">
+    <categories name="Default Category">
+      <pages name="Default Page" labelExpression="Page" domainClass="crmd::Event" semanticCandidateExpression="var:self" groups="//@extensions.2/@categories.0/@groups.0 //@extensions.2/@categories.0/@groups.1 //@extensions.2/@categories.0/@groups.2 //@extensions.2/@categories.0/@groups.3 //@extensions.2/@categories.0/@groups.4"/>
+      <groups name="Default Group" labelExpression="Group" domainClass="crmd::Event">
+        <controls xsi:type="properties:ContainerDescription" name="Event">
+          <controls xsi:type="properties:TextDescription" name="Eventid" labelExpression="event id" helpExpression="the identifier of event" valueExpression="feature:id">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:SelectDescription" name="EventType" labelExpression="Event Type" helpExpression="The type of event" valueExpression="feature:typeevent" candidatesExpression="aql:Sequence{crmd::Eventstype::TemporalEvent, crmd::Eventstype::ResourceUsageEvent, crmd::Eventstype::MarketRelatedEvent, crmd::Eventstype::UserEvent, crmd::Eventstype::Compositeevent}" candidateDisplayExpression="aql:candidate.toString()">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="typeevent" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:TextDescription" name="eventname" labelExpression="event name" helpExpression="the name of event" valueExpression="feature:name">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+        </controls>
+      </groups>
+      <groups name="TemporalEvent groupPR" labelExpression="Temporal event" domainClass="crmd::Event" semanticCandidateExpression="var:self" preconditionExpression="aql:self.typeevent=crmd::Eventstype::TemporalEvent">
+        <controls xsi:type="properties:ContainerDescription" name="Temporal Event ">
+          <controls xsi:type="properties:SelectDescription" name="predicatetype" labelExpression="predicate type" helpExpression="the type of predicate" valueExpression="feature:predicate" candidatesExpression="aql:Sequence{crmd::Predicatetype::TSEvent, crmd::Predicatetype::TPEvent}" candidateDisplayExpression="aql:candidate.toString()">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="predicate" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+        </controls>
+      </groups>
+      <groups name="ResourceUsageEvent group" label="Resource Usage Event group" labelExpression="Resource related event" domainClass="crmd::Event" semanticCandidateExpression="var:self" preconditionExpression="aql:self.typeevent=crmd::Eventstype::ResourceUsageEvent">
+        <controls xsi:type="properties:ContainerDescription" name="Resource related event">
+          <controls xsi:type="properties:SelectDescription" name="predicatetype" labelExpression="predicate type" helpExpression="the type of predicate" valueExpression="feature:predicate" candidatesExpression="aql:Sequence{crmd::Predicatetype::QEvent, crmd::Predicatetype::MEvent}" candidateDisplayExpression="aql:candidate.toString()">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="predicate" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:SelectDescription" name="resource metric" labelExpression="resource metric" helpExpression="resource metric" valueExpression="feature:metric" candidatesExpression="aql:Sequence{crmd::Propertyname::default, crmd::Propertyname::RAMusage, crmd::Propertyname::CPUusage, crmd::Propertyname::bandwidthusage, crmd::Propertyname::ResponseTime, crmd::Propertyname::Availability}" candidateDisplayExpression="aql:candidate.toString()">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="metric" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:RadioDescription" name="metrickind" labelExpression="metric kind" helpExpression="metric kind" valueExpression="feature:metrickind" candidatesExpression="aql:Sequence{crmd::metrickinds::measurable, crmd::metrickinds::abstract}" candidateDisplayExpression="aql:candidate.toString()">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="metrickind" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:SelectDescription" name="function" labelExpression="function" helpExpression="the evaluation way" valueExpression="feature:Function" candidatesExpression="aql:Sequence{crmd::Functiontype::default, crmd::Functiontype::Average, crmd::Functiontype::Maximum, crmd::Functiontype::Minimum}" candidateDisplayExpression="aql:candidate.toString()">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="Function" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:TextDescription" name="reference value" labelExpression="reference value" helpExpression="reference value" valueExpression="feature:reference_value">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="reference_value" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:SelectDescription" name="unit" labelExpression="unit" helpExpression="the used unit" valueExpression="feature:unit" candidatesExpression="aql:Sequence{crmd::Unittype::default, crmd::Unittype::Percentage, crmd::Unittype::euros, crmd::Unittype::seconds, crmd::Unittype::hours, crmd::Unittype::minutes}" candidateDisplayExpression="aql:candidate.toString()">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="unit" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:TextDescription" name="time window" labelExpression="time window" helpExpression="time window" valueExpression="feature:time_window">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="time_window" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:TextDescription" name="target resource" labelExpression="target_resource" helpExpression="target_resource" valueExpression="feature:target_resource">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="target_resource" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:TextDescription" name="label" labelExpression="label" valueExpression="feature:">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+        </controls>
+      </groups>
+      <groups name="TemporalEvent groupTP" labelExpression="Periodic event" domainClass="crmd::Event" semanticCandidateExpression="var:self" preconditionExpression="aql:self.predicate=crmd::Predicatetype::TPEvent and self.typeevent=crmd::Eventstype::TemporalEvent">
+        <controls xsi:type="properties:ContainerDescription" name="Periodic event ">
+          <controls xsi:type="properties:TextDescription" name="expression" labelExpression="periodic rule" valueExpression="feature:expression">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="expression" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:TextDescription" name="label" labelExpression="label" valueExpression="feature:">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+        </controls>
+      </groups>
+      <groups name="TemporalEvent groupTS" labelExpression="Specific date related event" domainClass="crmd::Event" semanticCandidateExpression="var:self" preconditionExpression="aql:self.predicate=crmd::Predicatetype::TSEvent and self.typeevent=crmd::Eventstype::TemporalEvent">
+        <controls xsi:type="properties:ContainerDescription" name="Specific date">
+          <controls xsi:type="properties:TextDescription" name="date" labelExpression="date" valueExpression="feature:date">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="date" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:TextDescription" name="label" labelExpression="label" valueExpression="feature:">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="var:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+        </controls>
+      </groups>
+    </categories>
+  </extensions>
+  <extensions xsi:type="properties:ViewExtensionDescription" name="Main Properties" label="Main properties">
+    <categories name="Default Category">
+      <pages name="Default Page" labelExpression="Page" domainClass="crmd::cRDM" semanticCandidateExpression="var:self" groups="//@extensions.3/@categories.0/@groups.0"/>
+      <groups name="Default Group" label="cRDM Configuration" labelExpression="cRDM Configuration" domainClass="crmd::cRDM">
+        <controls xsi:type="properties:TextDescription" name="name" labelExpression="Name" helpExpression="the name of cRDM instance" valueExpression="aql:self.name"/>
+        <controls xsi:type="properties:TextDescription" name="version" labelExpression="Version" helpExpression="the " valueExpression="aql:self.version"/>
+        <controls xsi:type="properties:ContainerDescription" name="orchestration">
+          <controls xsi:type="properties:ButtonDescription" name="generate " buttonLabelExpression="generate artifacts" imageExpression="Cloud.Elasticity.cRDM.design/icons/deploy.jpg">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:ButtonDescription" name="orchestration" buttonLabelExpression="launch orchestration" imageExpression="Cloud.Elasticity.cRDM.design/icons/orecheicons.jpg">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:ButtonDescription" name="dashboard" buttonLabelExpression="show dashboard" imageExpression="Cloud.Elasticity.cRDM.design/icons/dashboardicon.png">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:ButtonDescription" name="commit" buttonLabelExpression="commit changes" imageExpression="Cloud.Elasticity.cRDM.design/icons/updateicons.png">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+            </initialOperation>
+          </controls>
+          <layout xsi:type="properties:FillLayoutDescription" orientation="HORIZONTAL"/>
+        </controls>
+      </groups>
+    </categories>
+  </extensions>
+  <extensions xsi:type="properties:ViewExtensionDescription" name="Main Properties" label="Main properties">
+    <categories name="Default Category">
+      <pages name="Default Page" labelExpression="Page" domainClass="crmd::C_SM" semanticCandidateExpression="var:self" groups="//@extensions.4/@categories.0/@groups.0"/>
+      <groups name="Default Group" label="C-SM" labelExpression="C-SM" domainClass="crmd::C_SM">
+        <controls xsi:type="properties:TextDescription" name="name" labelExpression="Name" helpExpression="the name of C-SM instance" valueExpression="aql:self.name"/>
+        <controls xsi:type="properties:TextDescription" name="State" labelExpression="State" helpExpression="the name of C-SM instance" valueExpression="aql:self.state.name"/>
+        <controls xsi:type="properties:TextDescription" name="Transition" labelExpression="Transition" helpExpression="the name of C-SM instance" valueExpression="aql:self.transition.name"/>
+        <controls xsi:type="properties:TextDescription" name="State" labelExpression="Valid Accepted State" helpExpression="the name of C-SM instance" valueExpression="aql:self.state.name">
+          <style>
+            <labelForegroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+            <labelFontFormat>bold</labelFontFormat>
+          </style>
+        </controls>
+        <actions tooltipExpression="validate" imageExpression="Cloud.Elasticity.cRDM.design.TSMextension/icons/validate1.png">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+              <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Validate SM-Success!!">
+                <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                  <initialOperation/>
+                </buttons>
+                <page name="Default Page" semanticCandidateExpression="var:self" groups="//@extensions.4/@categories.0/@groups.0/@actions.0/@initialOperation/@firstModelOperations/@subModelOperations.0/@groups.0"/>
+                <groups name="Default Group" labelExpression="Success!" semanticCandidateExpression="var:self">
+                  <controls xsi:type="properties:LabelDescription" labelExpression="The validation has been done successfully!!">
+                    <style>
+                      <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                      <labelForegroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+                      <labelFontFormat>bold</labelFontFormat>
+                      <fontFormat>bold</fontFormat>
+                    </style>
+                  </controls>
+                  <controls xsi:type="properties:LabelDescription" labelExpression="The specified state machine is valid">
+                    <style>
+                      <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                      <labelForegroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+                      <labelFontFormat>bold</labelFontFormat>
+                      <fontFormat>bold</fontFormat>
+                    </style>
+                  </controls>
+                  <controls xsi:type="properties:LabelDescription" labelExpression="S2 must be retrible ----satisfied!">
+                    <style>
+                      <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                      <labelForegroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                      <labelFontFormat>bold</labelFontFormat>
+                      <fontFormat>bold</fontFormat>
+                    </style>
+                  </controls>
+                  <controls xsi:type="properties:LabelDescription" labelExpression="S3.failed =>S2 must be compensatable----satisfied!">
+                    <style>
+                      <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                      <labelForegroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                      <labelFontFormat>bold</labelFontFormat>
+                      <fontFormat>bold</fontFormat>
+                    </style>
+                  </controls>
+                  <controls xsi:type="properties:LabelDescription" labelExpression="S4.failed =>S3 must be compensatable----satisfied!">
+                    <style>
+                      <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                      <labelForegroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                      <labelFontFormat>bold</labelFontFormat>
+                      <fontFormat>bold</fontFormat>
+                    </style>
+                  </controls>
+                  <controls xsi:type="properties:LabelDescription" labelExpression="S3.failed =>S4 must be cancelled----satisfied!">
+                    <style>
+                      <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                      <labelForegroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                      <labelFontFormat>bold</labelFontFormat>
+                      <fontFormat>bold</fontFormat>
+                    </style>
+                  </controls>
+                  <style barStyle="SHORT_TITLE_BAR">
+                    <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                  </style>
+                </groups>
+              </subModelOperations>
+            </firstModelOperations>
+          </initialOperation>
+        </actions>
+      </groups>
+    </categories>
+  </extensions>
+  <extensions xsi:type="properties:ViewExtensionDescription" name="TSM Properties" label="Main properties">
+    <categories name="Default Category">
+      <pages name="Default Page" labelExpression="Page" domainClass="crmd::TSA" semanticCandidateExpression="var:self" groups="//@extensions.5/@categories.0/@groups.0 //@extensions.5/@categories.0/@groups.1"/>
+      <groups name="Default Group" label="TSA" labelExpression="TSA" domainClass="crmd::TSA">
+        <controls xsi:type="properties:TextDescription" name="name" labelExpression="Name" helpExpression="the name of C-SM instance" valueExpression="aql:self.name"/>
+        <controls xsi:type="properties:TextDescription" name="State" labelExpression="State" helpExpression="the name of C-SM instance" valueExpression="aql:self.tstate.name"/>
+        <controls xsi:type="properties:TextDescription" name="Transition" labelExpression="Transition" helpExpression="the name of C-SM instance" valueExpression="aql:self.ttransition.label"/>
+      </groups>
+      <groups name="Default Group" label="TSA2" labelExpression="Accepted termination state" domainClass="crmd::TSA">
+        <controls xsi:type="properties:ContainerDescription" name="ATS Container">
+          <controls xsi:type="properties:TextDescription" name="choice 1ATS" labelExpression="choice 1:" helpExpression="the name of C-SM instance">
+            <style>
+              <labelForegroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+              <labelFontFormat>bold</labelFontFormat>
+            </style>
+          </controls>
+          <controls xsi:type="properties:TextDescription" name="choice 2ATS" labelExpression="choice 2:" helpExpression="the name of C-SM instance">
+            <style>
+              <labelForegroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+              <labelFontFormat>bold</labelFontFormat>
+            </style>
+          </controls>
+          <controls xsi:type="properties:ButtonDescription" name="add" buttonLabelExpression="add choice ">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+            </initialOperation>
+            <style>
+              <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+              <labelForegroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+              <labelFontFormat>bold</labelFontFormat>
+            </style>
+          </controls>
+          <layout xsi:type="properties:FillLayoutDescription" orientation="HORIZONTAL"/>
+        </controls>
+      </groups>
+    </categories>
+  </extensions>
+</description:Group>
