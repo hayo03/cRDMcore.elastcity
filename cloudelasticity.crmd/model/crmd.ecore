@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="crmd" nsURI="http://www.example.org/crmd" nsPrefix="crmd">
+  <eClassifiers xsi:type="ecore:EClass" name="Resourcerequirment">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="property" lowerBound="1"
+        upperBound="-1" eType="#//Property" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="cRDM">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="crdmentity" upperBound="-1"
+        eType="#//cRDMEntity" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gc_sm" upperBound="-1"
+        eType="#//C_SM" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resourceconstraint" upperBound="-1"
+        eType="#//Resourceconstraint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resourcerequirment" upperBound="-1"
+        eType="#//Resourcerequirment" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="provider" upperBound="-1"
+        eType="#//Provider"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="C_Link" eSuperTypes="#//cRDMEntity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//Cloudresource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" upperBound="-1"
+        eType="#//Cloudresource"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Linktype"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Atomicresource" eSuperTypes="#//Cloudresource"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="Operatortype">
+    <eLiterals name="GreatorThan" value="6" literal=">"/>
+    <eLiterals name="GreaterThanorEqual" value="5" literal=">="/>
+    <eLiterals name="LessThanorEqual" value="3" literal="&lt;="/>
+    <eLiterals name="LessThan" value="4" literal="&lt;"/>
+    <eLiterals name="Belong" value="2" literal="∈"/>
+    <eLiterals name="Equal" value="1" literal="="/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="cRDMEntity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" upperBound="-1"
+        eType="#//Attribute" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Predicatetype">
+    <eLiterals name="default" literal="define predicate type"/>
+    <eLiterals name="TSEvent" value="1" literal="TS-Event"/>
+    <eLiterals name="TPEvent" value="2" literal="TP-Event"/>
+    <eLiterals name="Qevent" value="3" literal="Q-Event"/>
+    <eLiterals name="UEvent" value="4" literal="U-Event"/>
+    <eLiterals name="MEvent" value="5" literal="M-Event"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Compositeresource" eSuperTypes="#//Cloudresource">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="c_link" upperBound="-1"
+        eType="#//C_Link" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cloudresource" upperBound="-1"
+        eType="#//Cloudresource" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="C_SM">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startdate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enddate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transition" upperBound="-1"
+        eType="#//Transition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="state" upperBound="-1"
+        eType="#//State" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="csmrequirment" upperBound="-1"
+        eType="#//Resourcerequirment" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cevent" upperBound="-1"
+        eType="#//Event" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="creconfigurationaction"
+        upperBound="-1" eType="#//Reconfigurationaction" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CSM_tsa" upperBound="-1"
+        eType="#//TSA" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ttcransition" upperBound="-1"
+        eType="#//Ttransition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tcstate" upperBound="-1"
+        eType="#//Tstate" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Cloudresource" eSuperTypes="#//cRDMEntity">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//C_Resourcetype"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="c_sm" upperBound="-1" eType="#//C_SM"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="c_rconstraint" eType="#//Resourceconstraint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="c_rrequirment" eType="#//Resourcerequirment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="member" upperBound="-1"
+        eType="#//Group"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Datatype">
+    <eLiterals name="default" literal="define data type"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Property">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="property" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Datatype"
+        defaultValueLiteral="define data type"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//Operatortype"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="#//Unittype"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="required" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="default" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Unittype">
+    <eLiterals name="default" literal="default"/>
+    <eLiterals name="Percentage" value="1" literal="Percentage"/>
+    <eLiterals name="euros" value="2" literal="euros"/>
+    <eLiterals name="seconds" value="3" literal="seconds"/>
+    <eLiterals name="hours" value="4" literal="hours"/>
+    <eLiterals name="minutes" value="5" literal="minutes"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Attributename">
+    <eLiterals name="default" literal="define attribute name"/>
+    <eLiterals name="OperatingSystem" value="8" literal="Operating System"/>
+    <eLiterals name="Provider" value="7"/>
+    <eLiterals name="Sharing" value="4"/>
+    <eLiterals name="Speed" value="3"/>
+    <eLiterals name="Location" value="5"/>
+    <eLiterals name="CPU" value="1"/>
+    <eLiterals name="Memory" value="2"/>
+    <eLiterals name="Instances" value="6"/>
+    <eLiterals name="Architecture" value="10"/>
+    <eLiterals name="Storage" value="9"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Attribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="required" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="constraint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="default" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Datatype"
+        defaultValueLiteral="define data type"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="C_Resourcetype">
+    <eLiterals name="default" literal="default"/>
+    <eLiterals name="application" value="1" literal="application"/>
+    <eLiterals name="database" value="2" literal="database"/>
+    <eLiterals name="Container" value="3" literal="Container"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Resourceconstraint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="property" lowerBound="1"
+        upperBound="-1" eType="#//Property" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Linktype">
+    <eLiterals name="default" literal="define link type"/>
+    <eLiterals name="Dependency" value="4"/>
+    <eLiterals name="Storage" value="5"/>
+    <eLiterals name="Communication" value="1"/>
+    <eLiterals name="Containment"/>
+    <eLiterals name="Hosting" value="2"/>
+    <eLiterals name="Instantiation" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Propertyname">
+    <eLiterals name="default" literal="define property name"/>
+    <eLiterals name="bandwidthusage" value="11" literal="bandwidth usage"/>
+    <eLiterals name="Storageresilience" value="6" literal="Storage resilience"/>
+    <eLiterals name="PublicNetworkIncomingMbps" value="8" literal="Public Network Incoming Mbps"/>
+    <eLiterals name="Cost" value="7"/>
+    <eLiterals name="Throughput" value="5"/>
+    <eLiterals name="Availability" value="1"/>
+    <eLiterals name="CPUusage" value="10" literal="CPU usage"/>
+    <eLiterals name="Accuracy" value="4"/>
+    <eLiterals name="ResponseTime" value="2" literal="Response Time"/>
+    <eLiterals name="RAMusage" value="9" literal="RAM usage"/>
+    <eLiterals name="Latency" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Functiontype">
+    <eLiterals name="default" literal="choose function"/>
+    <eLiterals name="Maximum" value="3"/>
+    <eLiterals name="Average" value="1" literal="Average,"/>
+    <eLiterals name="Minimum" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CloudResourcerequirment" eSuperTypes="#//Resourcerequirment"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StateResourcerequirment" eSuperTypes="#//Resourcerequirment"/>
+  <eClassifiers xsi:type="ecore:EClass" name="State">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isfinal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isnormal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="characterize" upperBound="-1"
+        eType="#//Resourcerequirment" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tsa" upperBound="-1" eType="#//TSA"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//statetype"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationaction"
+        upperBound="-1" eType="#//Reconfigurationaction"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//State"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="#//State"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transitionevent" upperBound="-1"
+        eType="#//Event"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="predicate" eType="#//Predicatetype"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reference_value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="weakday" eType="#//weakdays"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Function" eType="#//Functiontype"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="metric" eType="#//Propertyname"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Operator" eType="#//Operatortype"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="#//Unittype"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timewindow" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetresource" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeevent" eType="#//Eventstype"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="metrickind" eType="#//metrickinds"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Reconfigurationaction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Cooldown" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Provider" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Migrationtype"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="migratename" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="migrate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="host" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resource_target" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Adjust" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Attribute_target" eType="#//Attributename"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scalingname" eType="#//Scalingnames"
+        defaultValueLiteral="scalein"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="adjustment_type" eType="#//Adjustmenttype"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="baname" eType="#//Basicactionname"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="action" eType="#//Reconfigurationactiontype"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="aname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="update"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="attributevalue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="execution" eType="#//Executiontype"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NormalState" eSuperTypes="#//State"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InitialState" eSuperTypes="#//State"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FinalState" eSuperTypes="#//State"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Mainmap">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="crdm" upperBound="-1" eType="#//cRDM"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connector" upperBound="-1"
+        eType="#//Connector" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="provider" upperBound="-1"
+        eType="#//Provider" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="orechestrationtool" upperBound="-1"
+        eType="#//OrechestrationTool" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Connector">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//targetresourcetypes"
+        defaultValueLiteral="XaaS"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetorchestrationtool"
+        lowerBound="1" upperBound="-1" eType="#//OrechestrationTool"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourcecRDM" lowerBound="1"
+        upperBound="-1" eType="#//cRDM"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="orchestrationtools">
+    <eLiterals name="Docker" literal="Docker"/>
+    <eLiterals name="Terraform" value="1" literal="Terraform"/>
+    <eLiterals name="kubernetes" value="2" literal="Kubernetes"/>
+    <eLiterals name="Ansible" value="3" literal="Ansible"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Reconfigurationactiontype">
+    <eLiterals name="default" literal="define desired action"/>
+    <eLiterals name="Basicaction" value="1" literal="Basicaction"/>
+    <eLiterals name="Migration" value="2" literal="Migration"/>
+    <eLiterals name="Horizontalscaling" value="3" literal="Horizontalscaling"/>
+    <eLiterals name="Verticalscaling" value="4" literal="Verticalscaling"/>
+    <eLiterals name="Applicationreconfiguration" value="5" literal="Applicationreconfiguration"/>
+    <eLiterals name="Compositereconfiguration" value="6" literal="Compositereconfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BasicAction" eSuperTypes="#//Reconfigurationaction"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="Basicactionname">
+    <eLiterals name="start" literal="start"/>
+    <eLiterals name="stop" value="1" literal="stop"/>
+    <eLiterals name="restart" value="2" literal="restart"/>
+    <eLiterals name="delete" value="3" literal="delete"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Migration" eSuperTypes="#//Reconfigurationaction"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="Migrationtype">
+    <eLiterals name="Cold" literal="Cold"/>
+    <eLiterals name="Hot" value="1" literal="Hot"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Horizontalscaling" eSuperTypes="#//Reconfigurationaction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Verticalscaling" eSuperTypes="#//Reconfigurationaction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Compositereconfiguration" eSuperTypes="#//Reconfigurationaction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="crname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationaction"
+        upperBound="-1" eType="#//Reconfigurationaction" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="actions" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Adjustmenttype">
+    <eLiterals name="default" literal="choose adjustment type"/>
+    <eLiterals name="Exactcapacity" value="1" literal="Exact-capacity"/>
+    <eLiterals name="Percentchangeincapacity" value="2" literal="Percent-change-in-capacity"/>
+    <eLiterals name="Changeincapacity" value="3" literal="change-in-capacity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Scalingnames">
+    <eLiterals name="Scalein" literal="scalein"/>
+    <eLiterals name="Scaleout" value="1" literal="scaleout"/>
+    <eLiterals name="Scaleup" value="2" literal="scaleup"/>
+    <eLiterals name="Scaledown" value="3" literal="scaledown"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Executiontype">
+    <eLiterals name="sequential" literal="sequential"/>
+    <eLiterals name="parallel" value="1" literal="parallel"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="weakdays">
+    <eLiterals name="Monday"/>
+    <eLiterals name="Tuesday" value="1" literal="Tuesday"/>
+    <eLiterals name="Wednesday" value="2" literal="Wednesday"/>
+    <eLiterals name="Thursday" value="3" literal="Thursday"/>
+    <eLiterals name="Friday" value="4" literal="Friday"/>
+    <eLiterals name="Saturday" value="5" literal="Saturday"/>
+    <eLiterals name="Sunday" value="6" literal="Sunday"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Eventstype">
+    <eLiterals name="TemporalEvent" literal="Temporal Event"/>
+    <eLiterals name="MarketRelatedEvent" value="4" literal="Market Related Event"/>
+    <eLiterals name="UserEvent" value="3" literal="User Event"/>
+    <eLiterals name="ResourceUsageEvent" value="2" literal="Resource Usage Event"/>
+    <eLiterals name="Compositeevent" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="metrickinds">
+    <eLiterals name="measurable" literal="measurable"/>
+    <eLiterals name="abstract" value="1" literal="abstract"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Provider">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="accesskey" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="secretkey" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AWS" eSuperTypes="#//Provider"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Openstack" eSuperTypes="#//Provider"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GoogleCloudPlatform" eSuperTypes="#//Provider"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OrechestrationTool">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tool" eType="#//orchestrationtools"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetresource" eType="#//targetresourcetypes"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="targetresourcetypes">
+    <eLiterals name="XaaS" literal="XaaS"/>
+    <eLiterals name="IaaS" value="1" literal="IaaS"/>
+    <eLiterals name="PaaS" value="2" literal="PaaS"/>
+    <eLiterals name="SaaS" value="3" literal="SaaS"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Group" eSuperTypes="#//cRDMEntity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cloudresource" upperBound="-1"
+        eType="#//Cloudresource" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resourcerequirment" eType="#//Resourcerequirment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resourceconstraint" eType="#//Resourceconstraint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="csm" upperBound="-1" eType="#//C_SM"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TSA">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tstate" upperBound="-1"
+        eType="#//Tstate" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ttransition" upperBound="-1"
+        eType="#//Ttransition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Ttransition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tsource" lowerBound="1"
+        eType="#//Tstate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ttarget" lowerBound="1"
+        eType="#//Tstate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Tstate">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//tsstatetype"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="tsstatetype">
+    <eLiterals name="initial" literal="initial"/>
+    <eLiterals name="active" value="1" literal="active"/>
+    <eLiterals name="completed" value="2" literal="completed"/>
+    <eLiterals name="cancelled" value="3" literal="cancelled"/>
+    <eLiterals name="failed" value="4" literal="failed"/>
+    <eLiterals name="compensated" value="5" literal="compensated"/>
+    <eLiterals name="intermediate" value="6" literal="intermediate"/>
+    <eLiterals name="final" value="7" literal="final"/>
+    <eLiterals name="Acceptedtermination" value="8" literal="Accepted Termination"/>
+    <eLiterals name="Validtermination" value="9" literal="Valid Termination"/>
+    <eLiterals name="NonValidtermination" value="10" literal="Non Valid termination"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="statetype">
+    <eLiterals name="initial"/>
+    <eLiterals name="intermediate" value="1" literal="intermediate"/>
+    <eLiterals name="final" value="2" literal="final"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Dependency" eSuperTypes="#//Ttransition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Normaltransilien" eSuperTypes="#//Ttransition"/>
+</ecore:EPackage>

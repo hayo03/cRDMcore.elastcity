@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/cloudelasticity.crmd/src" modelPluginID="cloudelasticity.crmd"
+    modelName="Crmd" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>crmd.ecore</foreignModel>
+  <genPackages prefix="crmd" basePackage="cloudelasticity" disposableProviderFactory="true"
+      ecorePackage="crmd.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="crmd.ecore#//Operatortype">
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Operatortype/GreatorThan"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Operatortype/GreaterThanorEqual"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Operatortype/LessThanorEqual"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Operatortype/LessThan"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Operatortype/Belong"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Operatortype/Equal"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="crmd.ecore#//Predicatetype">
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Predicatetype/default"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Predicatetype/TSEvent"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Predicatetype/TPEvent"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Predicatetype/Qevent"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Predicatetype/UEvent"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Predicatetype/MEvent"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="crmd.ecore#//Datatype">
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Datatype/default"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="crmd.ecore#//Unittype">
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Unittype/default"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Unittype/Percentage"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Unittype/euros"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Unittype/seconds"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Unittype/hours"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Unittype/minutes"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="crmd.ecore#//Attributename">
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Attributename/default"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Attributename/OperatingSystem"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Attributename/Provider"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Attributename/Sharing"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Attributename/Speed"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Attributename/Location"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Attributename/CPU"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Attributename/Memory"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Attributename/Instances"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Attributename/Architecture"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Attributename/Storage"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="crmd.ecore#//C_Resourcetype">
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//C_Resourcetype/default"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//C_Resourcetype/application"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//C_Resourcetype/database"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//C_Resourcetype/Container"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="crmd.ecore#//Linktype">
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Linktype/default"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Linktype/Dependency"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Linktype/Storage"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Linktype/Communication"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Linktype/Containment"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Linktype/Hosting"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Linktype/Instantiation"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="crmd.ecore#//Propertyname">
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Propertyname/default"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Propertyname/bandwidthusage"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Propertyname/Storageresilience"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Propertyname/PublicNetworkIncomingMbps"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Propertyname/Cost"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Propertyname/Throughput"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Propertyname/Availability"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Propertyname/CPUusage"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Propertyname/Accuracy"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Propertyname/ResponseTime"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Propertyname/RAMusage"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Propertyname/Latency"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="crmd.ecore#//Functiontype">
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Functiontype/default"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Functiontype/Maximum"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Functiontype/Average"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Functiontype/Minimum"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="crmd.ecore#//orchestrationtools">
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//orchestrationtools/Docker"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//orchestrationtools/Terraform"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//orchestrationtools/kubernetes"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//orchestrationtools/Ansible"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="crmd.ecore#//Reconfigurationactiontype">
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Reconfigurationactiontype/default"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Reconfigurationactiontype/Basicaction"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Reconfigurationactiontype/Migration"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Reconfigurationactiontype/Horizontalscaling"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Reconfigurationactiontype/Verticalscaling"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Reconfigurationactiontype/Applicationreconfiguration"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Reconfigurationactiontype/Compositereconfiguration"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="crmd.ecore#//Basicactionname">
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Basicactionname/start"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Basicactionname/stop"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Basicactionname/restart"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Basicactionname/delete"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="crmd.ecore#//Migrationtype">
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Migrationtype/Cold"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Migrationtype/Hot"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="crmd.ecore#//Adjustmenttype">
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Adjustmenttype/default"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Adjustmenttype/Exactcapacity"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Adjustmenttype/Percentchangeincapacity"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Adjustmenttype/Changeincapacity"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="crmd.ecore#//Scalingnames">
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Scalingnames/Scalein"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Scalingnames/Scaleout"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Scalingnames/Scaleup"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Scalingnames/Scaledown"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="crmd.ecore#//Executiontype">
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Executiontype/sequential"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Executiontype/parallel"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="crmd.ecore#//weakdays">
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//weakdays/Monday"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//weakdays/Tuesday"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//weakdays/Wednesday"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//weakdays/Thursday"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//weakdays/Friday"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//weakdays/Saturday"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//weakdays/Sunday"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="crmd.ecore#//Eventstype">
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Eventstype/TemporalEvent"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Eventstype/MarketRelatedEvent"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Eventstype/UserEvent"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Eventstype/ResourceUsageEvent"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//Eventstype/Compositeevent"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="crmd.ecore#//metrickinds">
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//metrickinds/measurable"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//metrickinds/abstract"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="crmd.ecore#//targetresourcetypes">
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//targetresourcetypes/XaaS"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//targetresourcetypes/IaaS"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//targetresourcetypes/PaaS"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//targetresourcetypes/SaaS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="crmd.ecore#//tsstatetype">
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//tsstatetype/initial"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//tsstatetype/active"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//tsstatetype/completed"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//tsstatetype/cancelled"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//tsstatetype/failed"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//tsstatetype/compensated"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//tsstatetype/intermediate"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//tsstatetype/final"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//tsstatetype/Acceptedtermination"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//tsstatetype/Validtermination"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//tsstatetype/NonValidtermination"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="crmd.ecore#//statetype">
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//statetype/initial"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//statetype/intermediate"/>
+      <genEnumLiterals ecoreEnumLiteral="crmd.ecore#//statetype/final"/>
+    </genEnums>
+    <genClasses ecoreClass="crmd.ecore#//Resourcerequirment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Resourcerequirment/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crmd.ecore#//Resourcerequirment/property"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Resourcerequirment/id"/>
+    </genClasses>
+    <genClasses ecoreClass="crmd.ecore#//cRDM">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//cRDM/version"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crmd.ecore#//cRDM/crdmentity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crmd.ecore#//cRDM/gc_sm"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crmd.ecore#//cRDM/resourceconstraint"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crmd.ecore#//cRDM/resourcerequirment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//cRDM/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//cRDM/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crmd.ecore#//cRDM/provider"/>
+    </genClasses>
+    <genClasses ecoreClass="crmd.ecore#//C_Link">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crmd.ecore#//C_Link/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crmd.ecore#//C_Link/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//C_Link/type"/>
+    </genClasses>
+    <genClasses ecoreClass="crmd.ecore#//Atomicresource"/>
+    <genClasses ecoreClass="crmd.ecore#//cRDMEntity">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crmd.ecore#//cRDMEntity/attribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//cRDMEntity/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//cRDMEntity/name"/>
+    </genClasses>
+    <genClasses ecoreClass="crmd.ecore#//Compositeresource">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crmd.ecore#//Compositeresource/c_link"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crmd.ecore#//Compositeresource/cloudresource"/>
+    </genClasses>
+    <genClasses ecoreClass="crmd.ecore#//C_SM">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//C_SM/startdate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//C_SM/enddate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//C_SM/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//C_SM/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crmd.ecore#//C_SM/transition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crmd.ecore#//C_SM/state"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crmd.ecore#//C_SM/csmrequirment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crmd.ecore#//C_SM/cevent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crmd.ecore#//C_SM/creconfigurationaction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crmd.ecore#//C_SM/CSM_tsa"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crmd.ecore#//C_SM/ttcransition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crmd.ecore#//C_SM/tcstate"/>
+    </genClasses>
+    <genClasses ecoreClass="crmd.ecore#//Cloudresource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Cloudresource/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crmd.ecore#//Cloudresource/c_sm"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crmd.ecore#//Cloudresource/c_rconstraint"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crmd.ecore#//Cloudresource/c_rrequirment"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crmd.ecore#//Cloudresource/member"/>
+    </genClasses>
+    <genClasses ecoreClass="crmd.ecore#//Property">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Property/property"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Property/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Property/operator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Property/unit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Property/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Property/required"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Property/default"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Property/description"/>
+    </genClasses>
+    <genClasses ecoreClass="crmd.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Attribute/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Attribute/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Attribute/required"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Attribute/constraint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Attribute/default"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Attribute/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Attribute/description"/>
+    </genClasses>
+    <genClasses ecoreClass="crmd.ecore#//Resourceconstraint">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crmd.ecore#//Resourceconstraint/property"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Resourceconstraint/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Resourceconstraint/name"/>
+    </genClasses>
+    <genClasses ecoreClass="crmd.ecore#//CloudResourcerequirment"/>
+    <genClasses ecoreClass="crmd.ecore#//StateResourcerequirment"/>
+    <genClasses ecoreClass="crmd.ecore#//State">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//State/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//State/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//State/isfinal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//State/isnormal"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crmd.ecore#//State/characterize"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crmd.ecore#//State/tsa"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//State/type"/>
+    </genClasses>
+    <genClasses ecoreClass="crmd.ecore#//Transition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Transition/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Transition/id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crmd.ecore#//Transition/reconfigurationaction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Transition/label"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crmd.ecore#//Transition/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crmd.ecore#//Transition/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crmd.ecore#//Transition/transitionevent"/>
+    </genClasses>
+    <genClasses ecoreClass="crmd.ecore#//Event">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Event/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Event/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Event/predicate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Event/expression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Event/reference_value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Event/date"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Event/weakday"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Event/Function"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Event/metric"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Event/Operator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Event/unit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Event/timewindow"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Event/targetresource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Event/typeevent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Event/metrickind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Event/label"/>
+    </genClasses>
+    <genClasses ecoreClass="crmd.ecore#//Reconfigurationaction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Reconfigurationaction/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Reconfigurationaction/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Reconfigurationaction/Cooldown"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Reconfigurationaction/Provider"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Reconfigurationaction/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Reconfigurationaction/migratename"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Reconfigurationaction/host"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Reconfigurationaction/resource_target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Reconfigurationaction/Adjust"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Reconfigurationaction/Attribute_target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Reconfigurationaction/scalingname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Reconfigurationaction/adjustment_type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Reconfigurationaction/baname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Reconfigurationaction/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Reconfigurationaction/action"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Reconfigurationaction/aname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Reconfigurationaction/attributevalue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Reconfigurationaction/execution"/>
+    </genClasses>
+    <genClasses ecoreClass="crmd.ecore#//NormalState"/>
+    <genClasses ecoreClass="crmd.ecore#//InitialState"/>
+    <genClasses ecoreClass="crmd.ecore#//FinalState"/>
+    <genClasses ecoreClass="crmd.ecore#//Mainmap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crmd.ecore#//Mainmap/crdm"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crmd.ecore#//Mainmap/connector"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crmd.ecore#//Mainmap/provider"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crmd.ecore#//Mainmap/orechestrationtool"/>
+    </genClasses>
+    <genClasses ecoreClass="crmd.ecore#//Connector">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Connector/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Connector/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crmd.ecore#//Connector/targetorchestrationtool"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crmd.ecore#//Connector/sourcecRDM"/>
+    </genClasses>
+    <genClasses ecoreClass="crmd.ecore#//BasicAction"/>
+    <genClasses ecoreClass="crmd.ecore#//Migration"/>
+    <genClasses ecoreClass="crmd.ecore#//Horizontalscaling"/>
+    <genClasses ecoreClass="crmd.ecore#//Verticalscaling"/>
+    <genClasses ecoreClass="crmd.ecore#//Compositereconfiguration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Compositereconfiguration/crname"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crmd.ecore#//Compositereconfiguration/reconfigurationaction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Compositereconfiguration/actions"/>
+    </genClasses>
+    <genClasses ecoreClass="crmd.ecore#//Provider">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Provider/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Provider/accesskey"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Provider/secretkey"/>
+    </genClasses>
+    <genClasses ecoreClass="crmd.ecore#//AWS"/>
+    <genClasses ecoreClass="crmd.ecore#//Openstack"/>
+    <genClasses ecoreClass="crmd.ecore#//GoogleCloudPlatform"/>
+    <genClasses ecoreClass="crmd.ecore#//OrechestrationTool">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//OrechestrationTool/tool"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//OrechestrationTool/targetresource"/>
+    </genClasses>
+    <genClasses ecoreClass="crmd.ecore#//Group">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crmd.ecore#//Group/cloudresource"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crmd.ecore#//Group/resourcerequirment"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crmd.ecore#//Group/resourceconstraint"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crmd.ecore#//Group/csm"/>
+    </genClasses>
+    <genClasses ecoreClass="crmd.ecore#//TSA">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crmd.ecore#//TSA/tstate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crmd.ecore#//TSA/ttransition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//TSA/name"/>
+    </genClasses>
+    <genClasses ecoreClass="crmd.ecore#//Ttransition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crmd.ecore#//Ttransition/tsource"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crmd.ecore#//Ttransition/ttarget"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Ttransition/label"/>
+    </genClasses>
+    <genClasses ecoreClass="crmd.ecore#//Tstate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Tstate/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Tstate/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crmd.ecore#//Tstate/label"/>
+    </genClasses>
+    <genClasses ecoreClass="crmd.ecore#//Dependency"/>
+    <genClasses ecoreClass="crmd.ecore#//Normaltransilien"/>
+  </genPackages>
+</genmodel:GenModel>
