@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated crmd -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="cloudelasticity.crmd.presentation.crmdModelWizardID"
+            name="%_UI_crmdModelWizard_label"
+            class="cloudelasticity.crmd.presentation.crmdModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/crmdModelFile.gif">
+         <description>%_UI_crmdModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated crmd -->
+      <editor
+            id="cloudelasticity.crmd.presentation.crmdEditorID"
+            name="%_UI_crmdEditor_label"
+            icon="icons/full/obj16/crmdModelFile.gif"
+            extensions="crmd"
+            class="cloudelasticity.crmd.presentation.crmdEditor"
+            contributorClass="cloudelasticity.crmd.presentation.crmdActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
