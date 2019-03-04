@@ -1,0 +1,83 @@
+ {
+ 	"CSM tempalte version": "2018-03-10",
+ 	"description": "This template describes the elasticity policies related to each cloud resource in terms of States and Transitions. The main element to describe each transition are mainly: Event, Condition and Action.",
+ 	"CSM": {
+
+ 		"States": {
+ 			"State 1": {
+ 				"label": "S1",
+ 				"ResourceRequirements": {
+ 					"Instances": "2",
+ 					"Provider": "AWS"
+ 				}
+ 			},
+ 			"State 2": {
+ 				"label": "S2",
+ 				"ResourceRequirements": {
+ 					"Instances": "4",
+ 					"Provider": "AWS"
+ 				}
+ 			}
+ 		},
+ 		"Transitions": {
+ 			"Transition1": {
+ 				"Identifier": "T1",
+ 				"Source": "S1",
+ 				"Target": "S2",
+ 				"Event": {
+ 					"window": "300 seconds",
+ 					"frequency": "20 seconds"
+ 				},
+ 				"Condition": {
+ 					"metric": "cpuusage",
+ 					"funtion": "average",
+ 					"Operator": ">=",
+ 					"threshold": "80",
+ 					"unit": "%"
+ 				},
+ 				"Action": {
+ 					"Type": "Horizontal Scaling",
+ 					"Properties": {
+ 						"Name": "scale-out",
+ 						"resource-target": "VM1",
+ 						"provider": "AWS",
+ 						"adjustment-type": "change-in-capacity",
+ 						"adjust": 2,
+ 						"cooldown": 60
+ 					}
+ 				}
+
+ 			},
+ 		     "Transition2": {
+ 				"Identifier": "T2",
+ 				"Source": "S2",
+ 				"Target": "S1",
+ 				"Event": {
+ 					"window": "300 seconds",
+ 					"frequency": "20 seconds"
+ 				},
+ 				"Condition": {
+ 					"metric": "cpuusage",
+ 					"funtion": "average",
+ 					"Operator": "=<",
+ 					"threshold": "20",
+ 					"unit": "%"
+ 				},
+ 				"Action": {
+ 					"Type": "Horizontal Scaling",
+ 					"Properties": {
+ 						"Name": "scale-in",
+ 						"resource-target": "VM1",
+ 						"provider": "AWS",
+ 						"adjustment-type": "change-in-capacity",
+ 						"adjust": 2,
+ 						"cooldown": 60
+ 					}
+ 				}
+
+ 			}
+		}
+ 	}
+ }
+ 	
+ 
