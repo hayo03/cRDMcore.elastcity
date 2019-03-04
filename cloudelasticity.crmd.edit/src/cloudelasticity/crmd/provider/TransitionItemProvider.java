@@ -3,7 +3,7 @@
 package cloudelasticity.crmd.provider;
 
 
-import cloudelasticity.crmd.Attribute;
+import cloudelasticity.crmd.Transition;
 import cloudelasticity.crmd.crmdPackage;
 
 import java.util.Collection;
@@ -26,12 +26,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link cloudelasticity.crmd.Attribute} object.
+ * This is the item provider adapter for a {@link cloudelasticity.crmd.Transition} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class AttributeItemProvider 
+public class TransitionItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -45,7 +45,7 @@ public class AttributeItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AttributeItemProvider(AdapterFactory adapterFactory) {
+	public TransitionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -62,11 +62,11 @@ public class AttributeItemProvider
 
 			addNamePropertyDescriptor(object);
 			addIdPropertyDescriptor(object);
-			addRequiredPropertyDescriptor(object);
-			addConstraintPropertyDescriptor(object);
-			addDefaultPropertyDescriptor(object);
-			addTypePropertyDescriptor(object);
-			addDescriptionPropertyDescriptor(object);
+			addReconfigurationactionPropertyDescriptor(object);
+			addLabelPropertyDescriptor(object);
+			addSourcePropertyDescriptor(object);
+			addTargetPropertyDescriptor(object);
+			addTransitioneventPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -82,9 +82,9 @@ public class AttributeItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Attribute_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_name_feature", "_UI_Attribute_type"),
-				 crmdPackage.Literals.ATTRIBUTE__NAME,
+				 getString("_UI_Transition_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_name_feature", "_UI_Transition_type"),
+				 crmdPackage.Literals.TRANSITION__NAME,
 				 true,
 				 false,
 				 false,
@@ -104,9 +104,9 @@ public class AttributeItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Attribute_id_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_id_feature", "_UI_Attribute_type"),
-				 crmdPackage.Literals.ATTRIBUTE__ID,
+				 getString("_UI_Transition_id_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_id_feature", "_UI_Transition_type"),
+				 crmdPackage.Literals.TRANSITION__ID,
 				 true,
 				 false,
 				 false,
@@ -116,63 +116,41 @@ public class AttributeItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Required feature.
+	 * This adds a property descriptor for the Reconfigurationaction feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRequiredPropertyDescriptor(Object object) {
+	protected void addReconfigurationactionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Attribute_required_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_required_feature", "_UI_Attribute_type"),
-				 crmdPackage.Literals.ATTRIBUTE__REQUIRED,
+				 getString("_UI_Transition_reconfigurationaction_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_reconfigurationaction_feature", "_UI_Transition_type"),
+				 crmdPackage.Literals.TRANSITION__RECONFIGURATIONACTION,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Constraint feature.
+	 * This adds a property descriptor for the Label feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addConstraintPropertyDescriptor(Object object) {
+	protected void addLabelPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Attribute_constraint_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_constraint_feature", "_UI_Attribute_type"),
-				 crmdPackage.Literals.ATTRIBUTE__CONSTRAINT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Default feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDefaultPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Attribute_default_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_default_feature", "_UI_Attribute_type"),
-				 crmdPackage.Literals.ATTRIBUTE__DEFAULT,
+				 getString("_UI_Transition_label_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_label_feature", "_UI_Transition_type"),
+				 crmdPackage.Literals.TRANSITION__LABEL,
 				 true,
 				 false,
 				 false,
@@ -182,58 +160,80 @@ public class AttributeItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Type feature.
+	 * This adds a property descriptor for the Source feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTypePropertyDescriptor(Object object) {
+	protected void addSourcePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Attribute_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_type_feature", "_UI_Attribute_type"),
-				 crmdPackage.Literals.ATTRIBUTE__TYPE,
+				 getString("_UI_Transition_source_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_source_feature", "_UI_Transition_type"),
+				 crmdPackage.Literals.TRANSITION__SOURCE,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Description feature.
+	 * This adds a property descriptor for the Target feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDescriptionPropertyDescriptor(Object object) {
+	protected void addTargetPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Attribute_description_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_description_feature", "_UI_Attribute_type"),
-				 crmdPackage.Literals.ATTRIBUTE__DESCRIPTION,
+				 getString("_UI_Transition_target_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_target_feature", "_UI_Transition_type"),
+				 crmdPackage.Literals.TRANSITION__TARGET,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
 
 	/**
-	 * This returns Attribute.gif.
+	 * This adds a property descriptor for the Transitionevent feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTransitioneventPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Transition_transitionevent_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_transitionevent_feature", "_UI_Transition_type"),
+				 crmdPackage.Literals.TRANSITION__TRANSITIONEVENT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This returns Transition.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Attribute"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Transition"));
 	}
 
 	/**
@@ -244,10 +244,10 @@ public class AttributeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Attribute)object).getName();
+		String label = ((Transition)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Attribute_type") :
-			getString("_UI_Attribute_type") + " " + label;
+			getString("_UI_Transition_type") :
+			getString("_UI_Transition_type") + " " + label;
 	}
 	
 
@@ -262,14 +262,10 @@ public class AttributeItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Attribute.class)) {
-			case crmdPackage.ATTRIBUTE__NAME:
-			case crmdPackage.ATTRIBUTE__ID:
-			case crmdPackage.ATTRIBUTE__REQUIRED:
-			case crmdPackage.ATTRIBUTE__CONSTRAINT:
-			case crmdPackage.ATTRIBUTE__DEFAULT:
-			case crmdPackage.ATTRIBUTE__TYPE:
-			case crmdPackage.ATTRIBUTE__DESCRIPTION:
+		switch (notification.getFeatureID(Transition.class)) {
+			case crmdPackage.TRANSITION__NAME:
+			case crmdPackage.TRANSITION__ID:
+			case crmdPackage.TRANSITION__LABEL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

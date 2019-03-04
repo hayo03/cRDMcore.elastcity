@@ -3,7 +3,8 @@
 package cloudelasticity.crmd.provider;
 
 
-import cloudelasticity.crmd.Attribute;
+import cloudelasticity.crmd.cRDM;
+import cloudelasticity.crmd.crmdFactory;
 import cloudelasticity.crmd.crmdPackage;
 
 import java.util.Collection;
@@ -13,6 +14,8 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+
+import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -26,12 +29,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link cloudelasticity.crmd.Attribute} object.
+ * This is the item provider adapter for a {@link cloudelasticity.crmd.cRDM} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class AttributeItemProvider 
+public class cRDMItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -45,7 +48,7 @@ public class AttributeItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AttributeItemProvider(AdapterFactory adapterFactory) {
+	public cRDMItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -60,31 +63,28 @@ public class AttributeItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
+			addVersionPropertyDescriptor(object);
 			addIdPropertyDescriptor(object);
-			addRequiredPropertyDescriptor(object);
-			addConstraintPropertyDescriptor(object);
-			addDefaultPropertyDescriptor(object);
-			addTypePropertyDescriptor(object);
-			addDescriptionPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
+			addProviderPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the Version feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addVersionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Attribute_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_name_feature", "_UI_Attribute_type"),
-				 crmdPackage.Literals.ATTRIBUTE__NAME,
+				 getString("_UI_cRDM_version_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_cRDM_version_feature", "_UI_cRDM_type"),
+				 crmdPackage.Literals.CRDM__VERSION,
 				 true,
 				 false,
 				 false,
@@ -104,9 +104,9 @@ public class AttributeItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Attribute_id_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_id_feature", "_UI_Attribute_type"),
-				 crmdPackage.Literals.ATTRIBUTE__ID,
+				 getString("_UI_cRDM_id_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_cRDM_id_feature", "_UI_cRDM_type"),
+				 crmdPackage.Literals.CRDM__ID,
 				 true,
 				 false,
 				 false,
@@ -116,41 +116,19 @@ public class AttributeItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Required feature.
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRequiredPropertyDescriptor(Object object) {
+	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Attribute_required_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_required_feature", "_UI_Attribute_type"),
-				 crmdPackage.Literals.ATTRIBUTE__REQUIRED,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Constraint feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addConstraintPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Attribute_constraint_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_constraint_feature", "_UI_Attribute_type"),
-				 crmdPackage.Literals.ATTRIBUTE__CONSTRAINT,
+				 getString("_UI_cRDM_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_cRDM_name_feature", "_UI_cRDM_type"),
+				 crmdPackage.Literals.CRDM__NAME,
 				 true,
 				 false,
 				 false,
@@ -160,80 +138,69 @@ public class AttributeItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Default feature.
+	 * This adds a property descriptor for the Provider feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDefaultPropertyDescriptor(Object object) {
+	protected void addProviderPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Attribute_default_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_default_feature", "_UI_Attribute_type"),
-				 crmdPackage.Literals.ATTRIBUTE__DEFAULT,
+				 getString("_UI_cRDM_provider_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_cRDM_provider_feature", "_UI_cRDM_type"),
+				 crmdPackage.Literals.CRDM__PROVIDER,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Type feature.
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Attribute_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_type_feature", "_UI_Attribute_type"),
-				 crmdPackage.Literals.ATTRIBUTE__TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(crmdPackage.Literals.CRDM__CRDMENTITY);
+			childrenFeatures.add(crmdPackage.Literals.CRDM__GC_SM);
+			childrenFeatures.add(crmdPackage.Literals.CRDM__RESOURCECONSTRAINT);
+			childrenFeatures.add(crmdPackage.Literals.CRDM__RESOURCEREQUIRMENT);
+		}
+		return childrenFeatures;
 	}
 
 	/**
-	 * This adds a property descriptor for the Description feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDescriptionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Attribute_description_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_description_feature", "_UI_Attribute_type"),
-				 crmdPackage.Literals.ATTRIBUTE__DESCRIPTION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
-	 * This returns Attribute.gif.
+	 * This returns cRDM.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Attribute"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/cRDM"));
 	}
 
 	/**
@@ -244,10 +211,10 @@ public class AttributeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Attribute)object).getName();
+		String label = ((cRDM)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Attribute_type") :
-			getString("_UI_Attribute_type") + " " + label;
+			getString("_UI_cRDM_type") :
+			getString("_UI_cRDM_type") + " " + label;
 	}
 	
 
@@ -262,15 +229,17 @@ public class AttributeItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Attribute.class)) {
-			case crmdPackage.ATTRIBUTE__NAME:
-			case crmdPackage.ATTRIBUTE__ID:
-			case crmdPackage.ATTRIBUTE__REQUIRED:
-			case crmdPackage.ATTRIBUTE__CONSTRAINT:
-			case crmdPackage.ATTRIBUTE__DEFAULT:
-			case crmdPackage.ATTRIBUTE__TYPE:
-			case crmdPackage.ATTRIBUTE__DESCRIPTION:
+		switch (notification.getFeatureID(cRDM.class)) {
+			case crmdPackage.CRDM__VERSION:
+			case crmdPackage.CRDM__ID:
+			case crmdPackage.CRDM__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case crmdPackage.CRDM__CRDMENTITY:
+			case crmdPackage.CRDM__GC_SM:
+			case crmdPackage.CRDM__RESOURCECONSTRAINT:
+			case crmdPackage.CRDM__RESOURCEREQUIRMENT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -286,6 +255,61 @@ public class AttributeItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(crmdPackage.Literals.CRDM__CRDMENTITY,
+				 crmdFactory.eINSTANCE.createcRDMEntity()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(crmdPackage.Literals.CRDM__CRDMENTITY,
+				 crmdFactory.eINSTANCE.createC_Link()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(crmdPackage.Literals.CRDM__CRDMENTITY,
+				 crmdFactory.eINSTANCE.createCloudresource()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(crmdPackage.Literals.CRDM__CRDMENTITY,
+				 crmdFactory.eINSTANCE.createAtomicresource()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(crmdPackage.Literals.CRDM__CRDMENTITY,
+				 crmdFactory.eINSTANCE.createCompositeresource()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(crmdPackage.Literals.CRDM__CRDMENTITY,
+				 crmdFactory.eINSTANCE.createGroup()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(crmdPackage.Literals.CRDM__GC_SM,
+				 crmdFactory.eINSTANCE.createC_SM()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(crmdPackage.Literals.CRDM__RESOURCECONSTRAINT,
+				 crmdFactory.eINSTANCE.createResourceconstraint()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(crmdPackage.Literals.CRDM__RESOURCEREQUIRMENT,
+				 crmdFactory.eINSTANCE.createResourcerequirment()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(crmdPackage.Literals.CRDM__RESOURCEREQUIRMENT,
+				 crmdFactory.eINSTANCE.createCloudResourcerequirment()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(crmdPackage.Literals.CRDM__RESOURCEREQUIRMENT,
+				 crmdFactory.eINSTANCE.createStateResourcerequirment()));
 	}
 
 	/**

@@ -3,7 +3,8 @@
 package cloudelasticity.crmd.provider;
 
 
-import cloudelasticity.crmd.Attribute;
+import cloudelasticity.crmd.State;
+import cloudelasticity.crmd.crmdFactory;
 import cloudelasticity.crmd.crmdPackage;
 
 import java.util.Collection;
@@ -13,6 +14,8 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+
+import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -26,12 +29,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link cloudelasticity.crmd.Attribute} object.
+ * This is the item provider adapter for a {@link cloudelasticity.crmd.State} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class AttributeItemProvider 
+public class StateItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -45,7 +48,7 @@ public class AttributeItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AttributeItemProvider(AdapterFactory adapterFactory) {
+	public StateItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -62,11 +65,9 @@ public class AttributeItemProvider
 
 			addNamePropertyDescriptor(object);
 			addIdPropertyDescriptor(object);
-			addRequiredPropertyDescriptor(object);
-			addConstraintPropertyDescriptor(object);
-			addDefaultPropertyDescriptor(object);
+			addIsfinalPropertyDescriptor(object);
+			addIsnormalPropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
-			addDescriptionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -82,9 +83,9 @@ public class AttributeItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Attribute_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_name_feature", "_UI_Attribute_type"),
-				 crmdPackage.Literals.ATTRIBUTE__NAME,
+				 getString("_UI_State_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_State_name_feature", "_UI_State_type"),
+				 crmdPackage.Literals.STATE__NAME,
 				 true,
 				 false,
 				 false,
@@ -104,9 +105,9 @@ public class AttributeItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Attribute_id_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_id_feature", "_UI_Attribute_type"),
-				 crmdPackage.Literals.ATTRIBUTE__ID,
+				 getString("_UI_State_id_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_State_id_feature", "_UI_State_type"),
+				 crmdPackage.Literals.STATE__ID,
 				 true,
 				 false,
 				 false,
@@ -116,19 +117,19 @@ public class AttributeItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Required feature.
+	 * This adds a property descriptor for the Isfinal feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRequiredPropertyDescriptor(Object object) {
+	protected void addIsfinalPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Attribute_required_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_required_feature", "_UI_Attribute_type"),
-				 crmdPackage.Literals.ATTRIBUTE__REQUIRED,
+				 getString("_UI_State_isfinal_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_State_isfinal_feature", "_UI_State_type"),
+				 crmdPackage.Literals.STATE__ISFINAL,
 				 true,
 				 false,
 				 false,
@@ -138,45 +139,23 @@ public class AttributeItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Constraint feature.
+	 * This adds a property descriptor for the Isnormal feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addConstraintPropertyDescriptor(Object object) {
+	protected void addIsnormalPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Attribute_constraint_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_constraint_feature", "_UI_Attribute_type"),
-				 crmdPackage.Literals.ATTRIBUTE__CONSTRAINT,
+				 getString("_UI_State_isnormal_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_State_isnormal_feature", "_UI_State_type"),
+				 crmdPackage.Literals.STATE__ISNORMAL,
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Default feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDefaultPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Attribute_default_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_default_feature", "_UI_Attribute_type"),
-				 crmdPackage.Literals.ATTRIBUTE__DEFAULT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -192,9 +171,9 @@ public class AttributeItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Attribute_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_type_feature", "_UI_Attribute_type"),
-				 crmdPackage.Literals.ATTRIBUTE__TYPE,
+				 getString("_UI_State_type_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_State_type_feature", "_UI_State_type"),
+				 crmdPackage.Literals.STATE__TYPE,
 				 true,
 				 false,
 				 false,
@@ -204,36 +183,45 @@ public class AttributeItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Description feature.
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDescriptionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Attribute_description_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_description_feature", "_UI_Attribute_type"),
-				 crmdPackage.Literals.ATTRIBUTE__DESCRIPTION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(crmdPackage.Literals.STATE__CHARACTERIZE);
+			childrenFeatures.add(crmdPackage.Literals.STATE__TSA);
+		}
+		return childrenFeatures;
 	}
 
 	/**
-	 * This returns Attribute.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+	/**
+	 * This returns State.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Attribute"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/State"));
 	}
 
 	/**
@@ -244,10 +232,10 @@ public class AttributeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Attribute)object).getName();
+		String label = ((State)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Attribute_type") :
-			getString("_UI_Attribute_type") + " " + label;
+			getString("_UI_State_type") :
+			getString("_UI_State_type") + " " + label;
 	}
 	
 
@@ -262,15 +250,17 @@ public class AttributeItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Attribute.class)) {
-			case crmdPackage.ATTRIBUTE__NAME:
-			case crmdPackage.ATTRIBUTE__ID:
-			case crmdPackage.ATTRIBUTE__REQUIRED:
-			case crmdPackage.ATTRIBUTE__CONSTRAINT:
-			case crmdPackage.ATTRIBUTE__DEFAULT:
-			case crmdPackage.ATTRIBUTE__TYPE:
-			case crmdPackage.ATTRIBUTE__DESCRIPTION:
+		switch (notification.getFeatureID(State.class)) {
+			case crmdPackage.STATE__NAME:
+			case crmdPackage.STATE__ID:
+			case crmdPackage.STATE__ISFINAL:
+			case crmdPackage.STATE__ISNORMAL:
+			case crmdPackage.STATE__TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case crmdPackage.STATE__CHARACTERIZE:
+			case crmdPackage.STATE__TSA:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -286,6 +276,26 @@ public class AttributeItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(crmdPackage.Literals.STATE__CHARACTERIZE,
+				 crmdFactory.eINSTANCE.createResourcerequirment()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(crmdPackage.Literals.STATE__CHARACTERIZE,
+				 crmdFactory.eINSTANCE.createCloudResourcerequirment()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(crmdPackage.Literals.STATE__CHARACTERIZE,
+				 crmdFactory.eINSTANCE.createStateResourcerequirment()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(crmdPackage.Literals.STATE__TSA,
+				 crmdFactory.eINSTANCE.createTSA()));
 	}
 
 	/**
