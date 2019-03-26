@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
+<nta>
+	<declaration>// Place global declarations here.
+//int instance=3, ram_usage, cpu_usage, newin;
+//objectif: vérifier un CSM qui contient à la fois des contraintes temporalles suivant un pater SD et des événements QOS
+
+//resourcerequirmentforeachstate? comment!
+//on besoin d'utiliser struc car chaque state a son nombre d'instance
+//provider
+clock Sdate;
+int provider=3;
+typedef int[0,3] r_provider;
+//Resource
+
+typedef int[0,10] resource;
+
+////************************Variables pour Resource Requirments
+typedef struct { 
+  int cpu;
+  int ram;
+  int r_instance;   
+} resource_req;
+
+//une instance pour le premier état (car on suppose qu'il y avait deja trois instances de 4cpui et 4ram sont pretes 
+resource_req  resource_req1 ={4,4,3};
+const resource_req  re={4,4,3};
+
+//************************Variables pour politiques de reconfigurations: les actions
+ //reconfigurantion_types qui sont 5, dans cette contributon on va s'interesser sur HS et VS, l'autres ne changent rien dans la verif
+typedef int[0,5] policy_t;
+ //adjusment_type
+const int adjusment_types     = 3;
+const int CC 		= 0;
+const int CP		= 1;
+const int EC 		= 2;
+
+typedef struct { 
+   resource resource_target;
+  int [0,adjusment_types] adjustment_type;
+  int adjust;    
+int cooldown;
+r_provider cloud_pr;
+} configuration_policy;
+// def de tab qui contient ces politiques 
+
+typedef configuration_policy arr_policy[4];
+const configuration_policy cp1={1,CC,3,60,1};
+const configuration_policy cp2={1, CC,3,60,1};
+const configuration_policy cp3={1, CC,3,60,1};
+const configuration_policy cp4={1, CC,6,60,1};
+const arr_policy arr1 = {cp1, cp2,cp3, cp4};
+configuration_policy rp;
+
+//*******************Declaration des chanels: qui sont pour signaler les evenements et les actions à executer 
+chan e,evaluate;
+chan done, scalein, scaleout, scaleup, scaledown, delete, stop, start, restart;
+chan EvaluateQevent;
+urgent chan Qevent; 
+//urgent chan scaleout, scalein, Qevent;
+
+//******************Variables pour les evenements: ici je considère l'event en tant que  struct 
+typedef int[0,10] metric;
+typedef int[0,10] function;
+typedef int[0,5] operator;
+typedef struct { 
+metric  t_metric;
+function t_func;
+operator t_op;    
+int ref;
+int frequency_v;
+int window_v;
+
+} q_event;
+
+q_event qose;
+
+// une table des evenements qui sera instantier au moment de CSM
+//1 avg, 2:min
+// 1 &gt;=, 2&lt;=
+typedef q_event arr_qevent[2];
+const q_event qe1={1,1,1,80,24,240};
+const q_event qe2={1,2,2,20,30, 240};
+const arr_qevent arrayevent = {qe1, qe2};
+
+////////////////////////declaration des fonctions
+//1) on commence par les fonctions qui simules les comportements des actions et qui seront exécuter par un controlleur d'ellasticité 
+
+//fonction scale-out
+//declaration d'une fonction qui a comme p an renconfiguration policy:
+
+resource_req scale_out1(configuration_policy policy)  //sera un reconfiguration
+{
+resource_req1.r_instance=resource_req1.r_instance+policy.adjust;
+
+return resource_req1;
+}
+
+//fonction scale-in
+resource_req scale_in(configuration_policy policy)  //sera un reconfiguration
+{
+resource_req1.r_instance=resource_req1.r_instance-policy.adjust;
+
+return resource_req1;
+}
+
+
+
+//fonctionsacle-up
+
+resource_req scale_up(configuration_policy policy)  //sera un reconfiguration
+{
+//todo
+
+return resource_req1;
+}
+//fonction scale-down
+
+resource_req scale_down(configuration_policy policy)  //sera un reconfiguration
+{
+//todo
+
+return resource_req1;
+}
+
+//fonction delete 
+
+resource_req deleteac(configuration_policy policy)  //sera un reconfiguration
+{
+//to do 
+
+return resource_req1;
+}
+//the same for stop, start, restart, reconfigure, update
+//definition des evenements et leur fonction d'evaluation 
+// variables
+
+bool res;
+clock frequency, window;
+int m[20];
+int su:=0;
+int compteur:=0, i:=0;
+
+
+//Q-Event (cpuusage, average, &gt;=, 80, %, 300 s)
+int avg(int c, int&amp; m[20])
+{
+su:=0;
+for (b : int[0,4])
+{
+su=su+m[b];
+}
+return su/1;
+}
+bool Qeventf(q_event ev, int&amp; m[20]) {
+int value=0;
+operator opc=ev.t_op;
+if (ev.t_func==1) 
+value=avg(10, m);
+else 
+value=20;
+
+if (opc==1 &amp;&amp; value &gt;=ev.ref)
+return true; 
+else if (opc==2 &amp;&amp; value &lt;=ev.ref)
+return true; 
+else 
+return false; 
+}
+
+
+
+
+
+//the two possible algo gor monitoring
+//periodic constraints to be handled at the end</declaration>
+	<template>
+		<name x="5" y="5">CSM</name>
+		<parameter>policy_t p,  resource_req  r,  arr_policy  arr, arr_qevent arrayevent</parameter>
+		<declaration>// Place local declarations here.</declaration>
+		<location id="id0" x="-510" y="-255">
+			<name x="-484" y="-272">S3Scaling</name>
+		</location>
+		<location id="id1" x="221" y="-144">
+			<committed/>
+		</location>
+		<location id="id2" x="-85" y="-408">
+			<committed/>
+		</location>
+		<location id="id3" x="-144" y="-136">
+			<name x="-154" y="-170">S2scaling</name>
+		</location>
+		<location id="id4" x="-425" y="-136">
+			<name x="-435" y="-170">S3</name>
+		</location>
+		<location id="id5" x="450" y="-289">
+			<name x="440" y="-323">S2</name>
+		</location>
+		<location id="id6" x="187" y="-399">
+			<name x="177" y="-433">S1scaling</name>
+		</location>
+		<location id="id7" x="-433" y="-365">
+			<name x="-443" y="-399">S1</name>
+		</location>
+		<init ref="id7"/>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id7"/>
+			<label kind="synchronisation" x="-467" y="-323">done?</label>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id0"/>
+			<label kind="synchronisation" x="-459" y="-204">scalein!</label>
+			<label kind="assignment" x="-484" y="-238">rp=arr[3]</label>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id1"/>
+			<label kind="synchronisation" x="280" y="-238">Qevent?</label>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id5"/>
+			<label kind="synchronisation" x="468" y="-284">EvaluateQevent!</label>
+			<label kind="assignment" x="468" y="-267">qose=arrayevent[1]</label>
+			<nail x="493" y="-399"/>
+			<nail x="544" y="-246"/>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id6"/>
+			<label kind="synchronisation" x="-59" y="-442">scaleout!</label>
+			<label kind="assignment" x="-59" y="-408">rp=arr[1]</label>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id7"/>
+			<label kind="synchronisation" x="-415" y="-428">EvaluateQevent!</label>
+			<label kind="assignment" x="-415" y="-411">qose=arrayevent[0]</label>
+			<nail x="-365" y="-458"/>
+			<nail x="-535" y="-433"/>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id4"/>
+			<label kind="synchronisation" x="-263" y="-119">done?</label>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id3"/>
+			<label kind="synchronisation" x="-68" y="-195">scaleout!</label>
+			<label kind="assignment" x="-25" y="-170">rp=arr[1]</label>
+			<nail x="59" y="-144"/>
+		</transition>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id5"/>
+			<label kind="synchronisation" x="289" y="-391">done?</label>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id2"/>
+			<label kind="synchronisation" x="-271" y="-442">Qevent?</label>
+			<nail x="-195" y="-399"/>
+			<nail x="-170" y="-399"/>
+		</transition>
+	</template>
+	<template>
+		<name>Monitor</name>
+		<declaration>int nb; </declaration>
+		<location id="id8" x="-595" y="-110">
+			<name x="-605" y="-144">Initial</name>
+		</location>
+		<location id="id9" x="229" y="136">
+			<committed/>
+		</location>
+		<location id="id10" x="229" y="-51">
+			<committed/>
+		</location>
+		<location id="id11" x="-34" y="-51">
+			<committed/>
+		</location>
+		<location id="id12" x="-382" y="-51">
+			<label kind="invariant" x="-392" y="-34">frequency&lt;=qose.frequency_v</label>
+		</location>
+		<init ref="id8"/>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id12"/>
+			<label kind="synchronisation" x="-544" y="-119">EvaluateQevent?</label>
+			<label kind="assignment" x="-578" y="-102">frequency=0, nb=qose.window_v/qose.frequency_v</label>
+			<nail x="-416" y="-68"/>
+		</transition>
+		<transition>
+			<source ref="id10"/>
+			<target ref="id8"/>
+			<label kind="guard" x="-280" y="-204">res==false</label>
+			<label kind="assignment" x="-50" y="-110">compteur=0</label>
+			<nail x="-68" y="-170"/>
+			<nail x="-382" y="-170"/>
+		</transition>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id8"/>
+			<label kind="assignment" x="-576" y="136">compteur=0</label>
+			<nail x="-594" y="136"/>
+			<nail x="-595" y="25"/>
+			<nail x="-595" y="-42"/>
+		</transition>
+		<transition>
+			<source ref="id10"/>
+			<target ref="id9"/>
+			<label kind="guard" x="161" y="0">res==true</label>
+			<label kind="synchronisation" x="170" y="25">Qevent!</label>
+		</transition>
+		<transition>
+			<source ref="id11"/>
+			<target ref="id10"/>
+			<label kind="guard" x="-7" y="-85">compteur&gt;=nb</label>
+			<label kind="assignment" x="-16" y="-51">res=Qeventf(qose,m)</label>
+		</transition>
+		<transition>
+			<source ref="id11"/>
+			<target ref="id12"/>
+			<label kind="guard" x="-364" y="38">compteur&lt;nb</label>
+			<label kind="assignment" x="-364" y="72">frequency=0, compteur=compteur+1</label>
+			<nail x="-34" y="76"/>
+			<nail x="-382" y="68"/>
+		</transition>
+		<transition>
+			<source ref="id12"/>
+			<target ref="id11"/>
+			<label kind="select" x="-374" y="-76">value:int[55,56]</label>
+			<label kind="guard" x="-272" y="-76">frequency==qose.frequency_v</label>
+			<label kind="assignment" x="-356" y="-51">m[compteur]=value</label>
+		</transition>
+	</template>
+	<template>
+		<name>Elasticitycontroller</name>
+		<declaration>clock cp; </declaration>
+		<location id="id13" x="51" y="-17">
+			<label kind="invariant" x="41" y="0">cp&lt;=rp.cooldown</label>
+		</location>
+		<location id="id14" x="-170" y="-17">
+			<label kind="invariant" x="-180" y="0">cp&lt;rp.cooldown</label>
+		</location>
+		<location id="id15" x="-578" y="-17">
+		</location>
+		<init ref="id15"/>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id14"/>
+			<label kind="synchronisation" x="-518" y="-34">delete?</label>
+		</transition>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id14"/>
+			<label kind="synchronisation" x="-433" y="85">scaleup?</label>
+			<label kind="assignment" x="-340" y="85">resource_req1=scale_up(rp), 
+cp=0</label>
+			<nail x="-476" y="85"/>
+			<nail x="-255" y="76"/>
+		</transition>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id14"/>
+			<label kind="synchronisation" x="-510" y="34">scaledown?</label>
+			<label kind="assignment" x="-425" y="34">resource_req1=scale_down(rp), 
+cp=0</label>
+			<nail x="-476" y="34"/>
+			<nail x="-255" y="25"/>
+		</transition>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id14"/>
+			<label kind="synchronisation" x="-484" y="-110">scaleout?</label>
+			<label kind="assignment" x="-399" y="-127">resource_req1=scale_out1(rp), 
+cp=0</label>
+			<nail x="-493" y="-85"/>
+			<nail x="-280" y="-93"/>
+		</transition>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id14"/>
+			<label kind="synchronisation" x="-476" y="-195">scalein?</label>
+			<label kind="assignment" x="-416" y="-195">resource_req1=scale_in(rp), 
+cp=0</label>
+			<nail x="-493" y="-136"/>
+			<nail x="-272" y="-144"/>
+		</transition>
+		<transition>
+			<source ref="id13"/>
+			<target ref="id15"/>
+			<label kind="guard" x="-568" y="101">cp==rp.cooldown</label>
+			<nail x="59" y="144"/>
+			<nail x="-578" y="153"/>
+		</transition>
+		<transition>
+			<source ref="id14"/>
+			<target ref="id13"/>
+			<label kind="synchronisation" x="-102" y="-34">done!</label>
+		</transition>
+	</template>
+	<template>
+		<name x="5" y="5">CSMdate</name>
+		<parameter>policy_t p,  resource_req  r,  arr_policy  arr</parameter>
+		<declaration>// Place local declarations here.
+</declaration>
+		<location id="id16" x="-357" y="-68">
+			<name x="-367" y="-102">Endscaling</name>
+		</location>
+		<location id="id17" x="391" y="-25">
+			<name x="408" y="-34">S3scaling</name>
+		</location>
+		<location id="id18" x="238" y="-408">
+			<name x="228" y="-442">S2scaling</name>
+		</location>
+		<location id="id19" x="-17" y="-408">
+			<name x="-27" y="-442">S1scaling</name>
+		</location>
+		<location id="id20" x="17" y="-25">
+			<name x="0" y="-67">End</name>
+		</location>
+		<location id="id21" x="399" y="-289">
+			<name x="389" y="-323">S3</name>
+			<label kind="invariant" x="389" y="-272">Sdate&lt;=87840</label>
+		</location>
+		<location id="id22" x="-17" y="-289">
+			<name x="-51" y="-297">S2</name>
+			<label kind="invariant" x="-27" y="-272">Sdate&lt;=65280</label>
+		</location>
+		<location id="id23" x="-408" y="-289">
+			<name x="-418" y="-323">S1</name>
+			<label kind="invariant" x="-418" y="-272">Sdate&lt;=44640</label>
+		</location>
+		<init ref="id23"/>
+		<transition>
+			<source ref="id16"/>
+			<target ref="id23"/>
+			<label kind="synchronisation" x="-382" y="-170">done?</label>
+			<label kind="assignment" x="-382" y="-204">Sdate=0</label>
+		</transition>
+		<transition>
+			<source ref="id17"/>
+			<target ref="id20"/>
+			<label kind="synchronisation" x="195" y="-51">done?</label>
+		</transition>
+		<transition>
+			<source ref="id18"/>
+			<target ref="id21"/>
+			<label kind="synchronisation" x="256" y="-365">done?</label>
+		</transition>
+		<transition>
+			<source ref="id19"/>
+			<target ref="id22"/>
+			<label kind="synchronisation" x="-17" y="-382">done?</label>
+		</transition>
+		<transition>
+			<source ref="id20"/>
+			<target ref="id16"/>
+			<label kind="synchronisation" x="-161" y="-42">scalein!</label>
+			<label kind="assignment" x="-229" y="-42">rp=arr[2]</label>
+		</transition>
+		<transition>
+			<source ref="id21"/>
+			<target ref="id17"/>
+			<label kind="guard" x="391" y="-204">Sdate==87840</label>
+			<label kind="synchronisation" x="408" y="-178">scalein!</label>
+			<label kind="assignment" x="408" y="-153">rp=arr[0]</label>
+		</transition>
+		<transition>
+			<source ref="id22"/>
+			<target ref="id18"/>
+			<label kind="guard" x="34" y="-314">Sdate==65280</label>
+			<label kind="synchronisation" x="119" y="-348">scaleout!</label>
+			<label kind="assignment" x="161" y="-374">rp=arr[1]</label>
+		</transition>
+		<transition>
+			<source ref="id23"/>
+			<target ref="id19"/>
+			<label kind="guard" x="-365" y="-366">Sdate==44640</label>
+			<label kind="synchronisation" x="-255" y="-382">scaleout!</label>
+			<label kind="assignment" x="-153" y="-408">rp=arr[1]</label>
+		</transition>
+	</template>
+	<system>// Place template instantiations here.
+//1er exemple: CSM avec SD-events
+CSMachinedate=CSMdate(1,re,arr1);
+
+CSMmachine= CSM(1,re,arr1,arrayevent);
+MonitorQOS=Monitor();
+ActionController = Elasticitycontroller();
+// List one or more processes to be composed into a system.
+
+system CSMachinedate, ActionController;
+
+//system CSMmachine, ActionController, MonitorQOS;
+
+//verif1==avec value:int[5, 7] ne donne rien il faut donc changer 
+    //des que je recois l'event je declenche l'action (par contre l'execution d'action peut prendre un temps
+//l'evalution d'evenement peut prendre aussi de temps mais toujours borne par les attributs de temps de les evenements a savoir frequency et windows
+//un chan urgent ou état ne permet pas de progresser le temps </system>
+	<queries>
+		<query>
+			<formula>E&lt;&gt;CSMachinedate.S2 imply Sdate&lt;=65280
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; CSMachinedate.End
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt;CSMachinedate.End imply resource_req1.r_instance==6
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt;CSMachinedate.S3 imply resource_req1.r_instance==9
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt;CSMachinedate.S2 imply resource_req1.r_instance==6
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>A[] CSMmachine.S2 imply resource_req1.r_instance==6
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>A[] CSMmachine.S3 imply resource_req1.r_instance==9
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>A[] CSMachinedate.S1 imply resource_req1.r_instance==3
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>A[] CSMmachine.S1 imply resource_req1.r_instance==3
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>A[] CSMmachine.S3 imply resource_req1.r_instance==9
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>A[] CSMmachine.S1
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; CSMmachine.S1
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; CSMmachine.End
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; CSMmachine.S3
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; CSMmachine.S2
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>A[] not deadlock
+			</formula>
+			<comment>
+			</comment>
+		</query>
+	</queries>
+</nta>
